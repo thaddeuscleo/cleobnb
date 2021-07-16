@@ -1,0 +1,29 @@
+
+/// Primary Button (Black, White)
+.primary-btn {
+  background-color: black;
+  border: 2.8px solid white;
+  padding: 1em;
+  border-radius: 10px;
+  cursor: pointer;
+  color: white;
+
+  &:hover {
+    background-color: white;
+    color: black;
+  }
+}
+
+.primary-btn-sm {
+  background-color: white;
+  border: none;
+  padding: .8em;
+  border-radius: 10px;
+  cursor: pointer;
+  color: black;
+
+  &:hover {
+    background-color: black;
+    color: white;
+  }
+}

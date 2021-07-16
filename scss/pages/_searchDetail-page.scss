@@ -1,0 +1,178 @@
+
+.detail-header-container {
+  margin-top: 2em;
+  font-family: $light-font;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .text {
+    h4 {
+      font-family: $bold-font;
+      font-weight: 100;
+      font-size: 23pt;
+    }
+  
+    div {
+      display: flex;
+  
+      p {
+        margin-right: .5em;
+      }
+    }
+  }
+
+  .buttons {
+
+    .btn {
+      text-decoration: none;
+      padding: .8em;
+      color: white;
+      border-radius: 2rem;
+      margin: .3em;
+      transition: .5s;
+      cursor: pointer;
+      font-family: $light-font;
+      font-weight: bolder;
+
+      &:hover {
+        background-color: rgb(41, 41, 41);
+      }
+    }
+    
+    .update {
+      background-color: rgb(110, 190, 110);
+    }
+
+    .delete {
+      background-color: rgb(228, 110, 110);
+    }
+  }
+}
+
+.detail-image-container {
+  margin-top: 1em;
+  max-width: 100%;
+  height: fit-content;
+  display: flex;
+
+  .button {
+    display: flex;
+    align-items: center;
+
+    span {
+      user-select: none;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: .5em;
+      margin: .3em;
+      background-color: $cherry-red;
+      color: white;
+      border-radius: 50%;
+      cursor: pointer;
+      transition: .5s;
+
+      &:hover {
+        background-color: rgb(221, 221, 221);
+        color: $cherry-red;
+      }
+    }
+  }
+
+  img {
+    border-radius: 10px;
+    width: 100%;
+    height: 65vh;
+    object-fit: cover;
+  }
+}
+
+.detail-owner-container {
+  margin-top: 2em;
+
+  h3 {
+    font-family: $bold-font;
+    font-size: 20pt;
+  }
+
+  p {
+    font-family: $light-font;
+  }
+
+  hr {
+    margin-top: .5em;
+    border: 1px solid $baby-gray;
+    width: 80%;
+    opacity: .4;
+  }
+}
+
+.detail-offer-container {
+  margin-top: .5em;
+  font-family: $light-font;
+  
+  h4 {
+    font-weight: bold;
+    margin-top: 1.5em;
+    margin-bottom: .4em;
+  }
+
+  p {
+    font-family: $light-font;
+  }
+
+  hr {
+    margin-top: 1em;
+    border: 1px solid $baby-gray;
+    width: 80%;
+  }
+}
+
+.bed-room-detail {
+  margin-top: 2em;
+  font-family: $light-font;
+  
+  h4 {
+    font-weight: bold;
+    margin-top: 1.5em;
+    margin-bottom: .4em;
+  }
+
+  p {
+    font-family: $light-font;
+  }
+
+  hr {
+    margin-top: 1em;
+    border: 1px solid $baby-gray;
+    width: 80%;
+    opacity: .4;
+  }
+
+  .icon-con {
+    display: flex;
+
+    .item {
+      margin: 0 2em;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      span {
+        margin-right: .5em;
+        font-size: 30pt;
+        color: $light-gray;
+      }
+
+      p {
+        font-weight: normal;
+      }
+
+      &:first-child{
+        margin-left: 0;
+      }
+    }
+  }
+}
+

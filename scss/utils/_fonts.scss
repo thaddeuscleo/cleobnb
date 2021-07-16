@@ -1,0 +1,23 @@
+//@font-face {
+//  font-family: "Circular";
+//  src: url("/src/viewsiews/fonts/Circular.otf");
+//}
+
+@font-face {
+  font-family: "Roboto";
+  src: url("/fonts/Roboto-Bold.ttf");
+}
+
+@font-face {
+  font-family: "Quicksand";
+  src: url("/fonts/quicksand.ttf");
+}
+
+@font-face {
+  font-family: "Yantramanav";
+  src: url("/fonts/Yantramanav-Thin.ttf");
+}
+
+$bold-font: "Roboto";
+$light-font: "Quicksand";
+$thin-font: "Yantramanav";

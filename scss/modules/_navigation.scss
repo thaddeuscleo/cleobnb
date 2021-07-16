@@ -1,0 +1,366 @@
+nav {
+  position: relative;
+  top: 0;
+  z-index: 1;
+  position: sticky;
+  width: 100vw;
+  background-color: white;
+  height: fit-content;
+  @include underShadow;
+
+  .container {
+    max-width: 88vw;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .nav__logo {
+      margin: 2em;
+
+      a {
+        text-decoration: none;
+
+        img {
+          width: 6vw;
+          min-width: 150px;
+        }
+      }
+    }
+
+    .nav__search-input {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 2em;
+
+      input[type="text"] {
+        border: none;
+        width: 20vw;
+        padding: 1.5em;
+        border-radius: 20px;
+        @include underShadow;
+      }
+
+      button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        border-radius: 50%;
+        margin-left: -60px;
+        width: 38px;
+        height: 38px;
+        border: none;
+        background-color: $accent-color;
+
+        span {
+          color: white;
+        }
+
+        &:hover {
+          background-color: white;
+
+          span {
+            color: $accent-color;
+          }
+        }
+      }
+    }
+
+    .nav__user-buttons {
+      margin: 2em;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      &__become-host {
+        background-color: white;
+        border: 2.8px solid black;
+        padding: .7em;
+        border-radius: 10px;
+        cursor: pointer;
+
+        &:hover {
+          background-color: black;
+          color: white;
+        }
+      }
+
+      &__language {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 40px;
+        height: 40px;
+        margin-left: 1em;
+        margin-right: 1em;
+        border: none;
+        padding: 1em;
+        background: none;
+        cursor: pointer;
+
+        &:hover {
+          background-color: $baby-gray;
+          border-radius: 50%;
+
+          span {
+            color: black;
+          }
+        }
+      }
+
+      &__user-button {
+        user-select: none;
+        border: 2px solid rgba(128, 128, 128, 0.58);
+        padding: .3em;
+        border-radius: 18px;
+        cursor: pointer;
+
+        span {
+          margin: .1em;
+        }
+
+        .gray {
+          color: gray;
+        }
+
+        &:hover {
+          @include small-shadow;
+        }
+      }
+    }
+  }
+}
+
+.user-modal {
+  @include small-shadow;
+  margin-top: 1em;
+  padding: .3em;
+  background-color: white;
+  position: absolute;
+  width: 13vw;
+  right: 6vw;
+  border-radius: 10px;
+  display: none;
+
+  h5 {
+    margin-top: .5em;
+    margin-bottom: .5em;
+    font-family: $thin-font;
+    font-weight: bold;
+    font-size: 14pt;
+    padding: 1em;
+    cursor: pointer;
+
+    &:hover {
+      border-radius: 10px;
+      background-color: $baby-gray;
+    }
+  }
+}
+
+.login-modal {
+  display: none;
+  top: 0;
+  background-color: rgba(49, 49, 49, 0.52);
+  z-index: 10;
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
+  justify-content: center;
+  align-items: center;
+
+
+  &__dialog {
+    padding: 2em;
+    width: 30vw;
+    height: 30vh;
+    min-width: 100px;
+    min-height: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    background-color: white;
+    border-radius: 10px;
+
+    &__header {
+
+      &__close {
+        position: absolute;
+        display: flex;
+        left: 24px;
+
+        button {
+          background: none;
+          border: none;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          padding: .5em;
+          cursor: pointer;
+
+          &:hover {
+            background: $baby-gray;
+            border-radius: 50%;
+          }
+        }
+      }
+
+      &__header {
+        display: flex;
+        justify-content: center;
+        width: 30vw;
+        user-select: none;
+        font-size: 14pt;
+        font-family: $light-font;
+        font-weight: bold;
+      }
+    }
+
+    &__body {
+      margin-top: 2em;
+      width: 30vw;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+
+      &__form {
+        margin-top: 2em;
+        width: 100%;
+        height: 100%;
+        text-align: center;
+
+
+        &__group {
+
+          input {
+            padding: 2.5em;
+            width: 80%;
+          }
+
+          #email {
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+            border: 1px solid black;
+            border-bottom: none;
+            margin-bottom: 0;
+          }
+
+          #password {
+            border-bottom-left-radius: 10px;
+            border-bottom-right-radius: 10px;
+            border: 1px solid black;
+            margin-top: 0;
+          }
+
+          button {
+            margin-top: 1em;
+            margin-bottom: 2em;
+            width: 91%;
+            padding: 1.5em;
+            cursor: pointer;
+            background-color: $cherry-red;
+            border: none;
+            color: white;
+            font-family: $light-font;
+            font-weight: bold;
+            border-radius: 10px;
+
+            &:hover {
+              opacity: 90%;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.search-modal {
+  position: fixed;
+  max-width: 100vw;
+  max-height: 100vh;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.795);
+  z-index: 10;
+  display: none;
+
+  .close-modal {
+    display: flex;
+    justify-content: flex-end;
+    color: white;
+    margin: 1em;
+    padding: .5em;
+    cursor: pointer;
+
+    span {
+      padding: .6em;
+      background-color: rgba(255, 255, 255, 0.096);
+      border-radius: 50%;
+      transition: .4s;
+
+      &:hover {
+        background-color: rgba(255, 255, 255, 0.425);
+      }
+    }
+  }
+  
+  .comps {
+    width: 80%;
+    padding: 2em;
+    margin: 2em auto;
+    display: flex;
+    justify-content: center;
+
+    .date-comp {
+      display: flex;
+
+      .date-ipt {
+        margin: 0 .8em;
+      }
+    }
+
+    .search-comp{
+      margin: 1em;
+
+      input {
+        border: none;
+        padding: .8em;
+        border-radius: 2rem;
+        text-indent: 1em;
+      }
+
+      h5 {
+        font-family: $light-font;
+        font-weight: bolder;
+        margin: .3em .9em;
+        color: white;
+      }
+    }
+  }
+
+  .button-con {
+    width: 30%;
+    margin: 0 auto;
+
+    button {
+      width: 100%;
+      padding: 1.3em;
+      border: none;
+      border-radius: 2rem;
+      background-color: $cherry-red;
+      color: white;
+      cursor: pointer;
+      transition: .5s;
+
+      &:hover {
+        background-color: rgb(231, 113, 132);
+      }
+    }
+  }
+}
+

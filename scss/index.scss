@@ -1,0 +1,42 @@
+/**
+  All Utils Imported Here
+  - Fonts: Import all font and apply fonts variable
+  - Colors: Import all web color
+  - Shadows: Import all shadows styles
+  - Width: manages the width for the layouts
+ */
+@import "utils/fonts";
+@import "utils/colors";
+@import "utils/shadows";
+@import "utils/widths";
+@import "utils/margins";
+
+/// All Components Imported Here
+@import "components/components";
+
+@import "modules/navigation";
+@import "modules/footer";
+@import "modules/info-modal";
+
+@import "pages/home-page";
+@import "pages/signup-page";
+@import "pages/searchResult-page";
+@import "pages/searchDetail-page";
+@import "pages/manage_my_rooms";
+@import "pages/add-room-page";
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  position: relative;
+  padding: 0;
+  margin: 0;
+  overflow-x: hidden; /* Hide horizontal scrollbar */
+}
+
+input:focus {
+  outline: none;
+}

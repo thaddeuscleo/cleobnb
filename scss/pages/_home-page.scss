@@ -1,0 +1,66 @@
+
+.main-banner {
+  user-select: none;
+  position: relative;
+  height: 95vh;
+
+  &__image {
+    position: absolute;
+  }
+
+  &__text {
+    position: absolute;
+    top: 30vh;
+    margin-left: 5em;
+
+    &__bold {
+      width: 200px;
+      font-family: $bold-font;
+      font-weight: 900;
+      font-size: 80px;
+    }
+
+    &__light {
+      font-family: $light-font;
+      font-weight: 100;
+      font-size: 40px;
+    }
+  }
+}
+
+.host-banner {
+  position: relative;
+  height: 75vh;
+
+  &__image {
+    border-radius: 20px;
+    position: absolute;
+    margin-top: 3em;
+    height: 67vh;
+    width: 80vw;
+    object-fit: cover;
+    filter: grayscale(40%)
+  }
+
+  &__text {
+    color: white;
+    margin-top: 3em;
+    margin-left: 3em;
+    top: 13vh;
+    position: absolute;
+
+    &__bold {
+      width: 250px;
+      font-family: $bold-font;
+      font-weight: 900;
+      font-size: 70px;
+    }
+
+    &__light {
+      width: 30vw;
+      font-family: $light-font;
+      font-weight: 100;
+      font-size: 30px;
+    }
+  }
+}
