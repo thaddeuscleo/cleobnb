@@ -1,0 +1,66 @@
+@import "../utils/colors";
+@import "../utils/fonts";
+
+.delete-page {
+    min-height: 60vh;
+    max-width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .form {
+        width: 50%;
+        height: 50%;
+        background-color: $soft-white;
+        border-radius: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: .8em;
+
+        h1 {
+            font-family: $bold-font;
+            text-transform: uppercase;
+            font-weight: bolder;
+        }
+
+        p {
+            font-family: $light-font;
+        }
+
+        .buttons {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            a, button {
+                width: 50%;
+                height: 10%;
+                border: none;
+                margin: 1em;
+                padding: .3em .8em;
+                font-size: 15pt;
+                font-family: $light-font;
+                font-weight: bolder;
+                text-align: center;
+                text-decoration: none;
+                color: white;
+                border-radius: 10px;
+                transition: 1s;
+                cursor: pointer;
+
+                &:hover {
+                    filter: grayscale(1) brightness(.5);
+                    transform: scale(1.1);
+                }
+            }
+
+            a {
+                background-color: rgb(185, 185, 185);
+            }
+
+            button {
+                background-color: $cherry-red;
+            }
+        }
+    }
+}

@@ -1370,6 +1370,109 @@ footer .container__menu a:hover {
   cursor: pointer;
 }
 
+@font-face {
+  font-family: "Roboto";
+  src: url("/fonts/Roboto-Bold.ttf");
+}
+
+@font-face {
+  font-family: "Quicksand";
+  src: url("/fonts/quicksand.ttf");
+}
+
+@font-face {
+  font-family: "Yantramanav";
+  src: url("/fonts/Yantramanav-Thin.ttf");
+}
+
+.delete-page {
+  min-height: 60vh;
+  max-width: 100vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.delete-page .form {
+  width: 50%;
+  height: 50%;
+  background-color: #ffebeb;
+  border-radius: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: .8em;
+}
+
+.delete-page .form h1 {
+  font-family: "Roboto";
+  text-transform: uppercase;
+  font-weight: bolder;
+}
+
+.delete-page .form p {
+  font-family: "Quicksand";
+}
+
+.delete-page .form .buttons {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.delete-page .form .buttons a, .delete-page .form .buttons button {
+  width: 50%;
+  height: 10%;
+  border: none;
+  margin: 1em;
+  padding: .3em .8em;
+  font-size: 15pt;
+  font-family: "Quicksand";
+  font-weight: bolder;
+  text-align: center;
+  text-decoration: none;
+  color: white;
+  border-radius: 10px;
+  -webkit-transition: 1s;
+  transition: 1s;
+  cursor: pointer;
+}
+
+.delete-page .form .buttons a:hover, .delete-page .form .buttons button:hover {
+  -webkit-filter: grayscale(1) brightness(0.5);
+          filter: grayscale(1) brightness(0.5);
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+.delete-page .form .buttons a {
+  background-color: #b9b9b9;
+}
+
+.delete-page .form .buttons button {
+  background-color: #d70466;
+}
+
 * {
   padding: 0;
   margin: 0;

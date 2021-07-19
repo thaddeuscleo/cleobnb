@@ -26,8 +26,8 @@ list($data, $images, $amenities) = getById($id);
     <?php if (isset($_SESSION['role'])) : ?>
         <?php if ($_SESSION['role'] == 1) : ?>
             <div class="buttons">
-                <a href="" class="btn update">Update</a>
-                <a href="" class="btn delete">Delete</a>
+                <a href="update_space.php?id=<?= $id ?>" class="btn update">Update</a>
+                <a href="delete_space.php?id=<?= $id ?>" class="btn delete">Delete</a>
             </div>
         <?php endif; ?>
         <?php if ($_SESSION['role'] == 0) : ?>
