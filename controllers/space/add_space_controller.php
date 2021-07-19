@@ -16,7 +16,8 @@ function get_add_room_data()
         $_POST['shower-count'],
         $_POST['bathub-count'],
         $_POST['place-type'],
-        $_POST['guess-count']
+        $_POST['guess-count'],
+        $_POST['price']
     );
 }
 
@@ -89,6 +90,50 @@ function getUploadFile()
     return $filenames;
 }
 
+function getAmenities()
+{
+    return array(
+        $_POST['kitchen'],
+        $_POST['free-parking'],
+        $_POST['pets-allowed'],
+        $_POST['wifi'],
+        $_POST['backyard'],
+        $_POST['security-camera'],
+        $_POST['hot-tub'],
+        $_POST['smoke-alarm'],
+        $_POST['dedicated-workspace'],
+    );
+}
+
+function insertAmenities($spaceId)
+{
+    global $conn;
+    $data = getAmenities();
+
+    $colums = [
+        'kitchen',
+        'free_parking',
+        'pets_allowed',
+        'wifi',
+        'backyard',
+        'security_camera',
+        'hot_tub',
+        'smoke_alarm',
+        'dedicated_workspace',
+        'space_id',
+    ];
+
+    $conn->query("INSERT INTO amenities(space_id) VALUE ('$spaceId')");
+
+    for ($i = 0; $i < count($colums); $i++) {
+        if ($data[$i] == "on") {
+            $col = $colums[$i];
+            $query = "UPDATE amenities SET " . $col . " = 1 WHERE space_id = '$spaceId'";
+            $conn->query($query);
+        }
+    }
+}
+
 function insertSpace(
     $spaceName,
     $startDate,
@@ -102,19 +147,25 @@ function insertSpace(
     $bathubCount,
     $placeType,
     $filenames,
-    $guessCount
+    $guessCount,
+    $price
 ) {
     global $conn;
     $userId = $_SESSION['id'];
-    $query = "INSERT INTO spaces (name, start_date, end_date, location, About, bedroom_count, bed_count, bathroom_count, shower_count, bathub_count, place_type, user_id, guess_count) VALUES( '$spaceName', '$startDate', '$endDate', '$location', '$about', '$bedroomCount', '$bedCount', '$bathroomCount', '$showerCount', '$bathubCount', '$placeType', '$userId', '$guessCount')";
+    $query = "INSERT INTO spaces (name, start_date, end_date, location, about, bedroom_count, bed_count, bathroom_count, shower_count, bathub_count, place_type, user_id, guess_count, price, available) VALUES( '$spaceName', '$startDate', '$endDate', '$location', '$about', '$bedroomCount', '$bedCount', '$bathroomCount', '$showerCount', '$bathubCount', '$placeType', '$userId', '$guessCount', '$price', 1)";
 
     $insertResult = $conn->query($query);
     if ($insertResult) {
+
         $selectQuery = "SELECT id FROM spaces WHERE name = '$spaceName'";
         $res = $conn->query($selectQuery);
         $data = $res->fetch_array();
         $spaceId = $data['id'];
 
+        //Insert Amenities
+        insertAmenities($spaceId);
+
+        //Insert Images
         foreach ($filenames as $file) {
             $inserImgQuery = "INSERT INTO space_images (image_path, space_id) VALUES('$file', '$spaceId')";
             $conn->query($inserImgQuery);
@@ -136,7 +187,8 @@ function validateField(
     $showerCount,
     $bathubCount,
     $placeType,
-    $guessCount
+    $guessCount,
+    $price
 ) {
     global $conn;
     $fileCount = count($_FILES['images']['name']);
@@ -175,6 +227,11 @@ function validateField(
 
     if (strlen($location) < 1) {
         $_SESSION['location_err'] = "Location Can't Be Empty";
+        return false;
+    }
+
+    if ($price < 100000) {
+        $_SESSION['price_err'] = "price Minumun is 100000";
         return false;
     }
 
@@ -221,6 +278,7 @@ function validateField(
 }
 
 if (isset($_POST['add_space'])) {
+
     list(
         $spaceName,
         $startDate,
@@ -233,7 +291,8 @@ if (isset($_POST['add_space'])) {
         $showerCount,
         $bathubCount,
         $placeType,
-        $guessCount
+        $guessCount,
+        $price
     ) = get_add_room_data();
 
     $isValid = validateField(
@@ -247,7 +306,8 @@ if (isset($_POST['add_space'])) {
         $showerCount,
         $bathubCount,
         $placeType,
-        $guessCount
+        $guessCount,
+        $price
     );
 
     $filenames = getUploadFile();
@@ -267,7 +327,8 @@ if (isset($_POST['add_space'])) {
             $bathubCount,
             $placeType,
             $filenames,
-            $guessCount
+            $guessCount,
+            $price
         );
         header('Location: ../../manage_my_space.php');
     } else {

@@ -18,6 +18,7 @@ $count = 0;
         <a href="add_space.php">Add Rooms</a>
     </div>
     <div class="all-rooms">
+        <!-- TODO: Show available space according to the search  -->
         <?php foreach ($spaces as $space) : ?>
             <div class="row">
                 <a href="space_detail.php?id=<?= $space['id']; ?>">

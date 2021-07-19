@@ -151,7 +151,29 @@
   }
 
   .icon-con {
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+
+    .amenities-item {
+      margin-right: 2em;
+
+      div  {
+        display: flex;
+        align-items: center;
+        width: 10%;
+        padding: 2em;
+
+        span {
+          margin-right: .5em;
+          font-size: 30pt;
+          color: $light-gray;
+        }
+
+        p {
+          font-weight: normal;
+        }
+      }
+    }
 
     .item {
       margin: 0 2em;

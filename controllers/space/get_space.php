@@ -11,7 +11,9 @@ function getById($id)
     $data = $res->fetch_assoc();
     $imageQuery = "SELECT image_path FROM space_images WHERE space_id = '$id'";
     $images = $conn->query($imageQuery);
-    return array($data, $images);
+    $amenitiesQuery = "SELECT * FROM amenities WHERE space_id = '$id'";
+    $amenities = $conn->query($amenitiesQuery)->fetch_assoc();
+    return array($data, $images, $amenities);
 }
 
 function getAll()

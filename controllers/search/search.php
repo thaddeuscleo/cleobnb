@@ -14,7 +14,7 @@ function searchHost()
     $start = date("F j", strtotime($startDate));
     $end = date("F j", strtotime($endDate));
 
-    $query = "SELECT * FROM spaces WHERE start_date BETWEEN start_date AND '$startDate' AND end_date BETWEEN '$endDate' AND end_date AND location LIKE '%$location%' AND guess_count >= '$guessNumber'";
+    $query = "SELECT * FROM spaces WHERE start_date BETWEEN start_date AND '$startDate' AND end_date BETWEEN '$endDate' AND end_date AND location LIKE '%$location%' AND guess_count >= '$guessNumber' AND available  = 1";
 
     $results = $conn->query($query);
     if ($results) {

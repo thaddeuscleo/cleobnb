@@ -65,6 +65,43 @@
                 padding: .9em;
                 border-radius: 10px;
             }
+
+            .amenities-container {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: start;
+
+                &__item {
+                    width: 11%;
+                    display: flex;
+                    align-items: center;
+                    padding: .2em;
+                    margin: 1.3em;
+                    
+                    input {
+                        $size: 20px;
+                        width: $size;
+                        height: $size;
+                        margin-right: .6em;
+                        cursor: pointer;
+                    }
+
+                    div {
+                        display: flex;
+                        align-items: center;
+
+                        span {
+                            font-size: 25pt;
+                            margin-right: .3em;
+                            color: rgb(82, 82, 82);
+                        }
+
+                        p {
+                            font-family: $light-font;
+                        }
+                    }
+                }
+            }
         }
 
         button {
