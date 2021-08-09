@@ -5,7 +5,7 @@ require 'controllers/space/get_space.php';
 $id = $_GET['id'];
 
 list($data, $images, $amenities) = getById($id);
-// echo "<pre>" . var_export($amenities, true) . "</pre>"
+// echo "<pre>" . var_export($data, true) . "</pre>"
 ?>
 
 
@@ -80,10 +80,10 @@ list($data, $images, $amenities) = getById($id);
 <div class="container detail-offer-container">
     <h4>About this space</h4>
     <!-- TODO: Show About this place -->
-    <?php if (strlen($data['About']) < 1) : ?>
+    <?php if (!isset($data['about'])) : ?>
         <p>-</p>
     <?php else : ?>
-        <p><?= $data['About']; ?></p>
+        <p><?= $data['about']; ?></p>
     <?php endif; ?>
     <hr>
 </div>

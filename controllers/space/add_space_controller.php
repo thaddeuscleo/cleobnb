@@ -92,16 +92,48 @@ function getUploadFile()
 
 function getAmenities()
 {
+
+    $kitchen = $freeParking = $petsAllowed = $wifi = $backyard = $securityCamera = "off";
+    $hotTub = $smokeAlarm = $dedicatedWorkspace = "off";
+
+    if(isset($_POST['kitchen'])){
+        $kitchen = "on";
+    }
+    if(isset($_POST['free-parking'])){
+        $freeParking = "on";
+    }
+    if(isset($_POST['pets-allowed'])){
+        $petsAllowed = "on";
+    }
+    if(isset($_POST['wifi'])){
+        $wifi = "on";
+    }
+    if(isset($_POST['backyard'])){
+        $backyard = "on";
+    }
+    if(isset($_POST['security-camera'])){
+        $securityCamera = "on";
+    }
+    if(isset($_POST['hot-tub'])){
+        $hotTub = "on";
+    }
+    if(isset($_POST['smoke-alarm'])){
+        $smokeAlarm = "on";
+    }
+    if(isset($_POST['dedicated-workspace'])){
+        $dedicatedWorkspace = "on";
+    }
+
     return array(
-        $_POST['kitchen'],
-        $_POST['free-parking'],
-        $_POST['pets-allowed'],
-        $_POST['wifi'],
-        $_POST['backyard'],
-        $_POST['security-camera'],
-        $_POST['hot-tub'],
-        $_POST['smoke-alarm'],
-        $_POST['dedicated-workspace'],
+        $kitchen,
+        $freeParking,
+        $petsAllowed,
+        $wifi,
+        $backyard,
+        $securityCamera,
+        $hotTub,
+        $smokeAlarm,
+        $dedicatedWorkspace,
     );
 }
 
@@ -119,8 +151,7 @@ function insertAmenities($spaceId)
         'security_camera',
         'hot_tub',
         'smoke_alarm',
-        'dedicated_workspace',
-        'space_id',
+        'dedicated_workspace'        
     ];
 
     $conn->query("INSERT INTO amenities(space_id) VALUE ('$spaceId')");

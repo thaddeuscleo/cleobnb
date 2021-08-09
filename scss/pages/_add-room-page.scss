@@ -72,14 +72,14 @@
                 justify-content: start;
 
                 &__item {
-                    width: 11%;
+                    width: 16%;
                     display: flex;
                     align-items: center;
                     padding: .2em;
                     margin: 1.3em;
                     
                     input {
-                        $size: 20px;
+                        $size: 23px;
                         width: $size;
                         height: $size;
                         margin-right: .6em;

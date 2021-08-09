@@ -1,21 +1,16 @@
-//@font-face {
-//  font-family: "Circular";
-//  src: url("/src/viewsiews/fonts/Circular.otf");
-//}
-
 @font-face {
   font-family: "Roboto";
-  src: url("/fonts/Roboto-Bold.ttf");
+  src: url("../scss/fonts/Roboto-Bold.ttf");
 }
 
 @font-face {
   font-family: "Quicksand";
-  src: url("/fonts/quicksand.ttf");
+  src: url("../scss/fonts/quicksand.ttf");
 }
 
 @font-face {
   font-family: "Yantramanav";
-  src: url("/fonts/Yantramanav-Thin.ttf");
+  src: url("../scss/fonts/Yantramanav-Thin.ttf");
 }
 
 $bold-font: "Roboto";

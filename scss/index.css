@@ -7,17 +7,17 @@
  */
 @font-face {
   font-family: "Roboto";
-  src: url("/fonts/Roboto-Bold.ttf");
+  src: url("../scss/fonts/Roboto-Bold.ttf");
 }
 
 @font-face {
   font-family: "Quicksand";
-  src: url("/fonts/quicksand.ttf");
+  src: url("../scss/fonts/quicksand.ttf");
 }
 
 @font-face {
   font-family: "Yantramanav";
-  src: url("/fonts/Yantramanav-Thin.ttf");
+  src: url("../scss/fonts/Yantramanav-Thin.ttf");
 }
 
 .image-banner {
@@ -1158,17 +1158,17 @@ footer .container__menu a:hover {
 
 @font-face {
   font-family: "Roboto";
-  src: url("/fonts/Roboto-Bold.ttf");
+  src: url("../scss/fonts/Roboto-Bold.ttf");
 }
 
 @font-face {
   font-family: "Quicksand";
-  src: url("/fonts/quicksand.ttf");
+  src: url("../scss/fonts/quicksand.ttf");
 }
 
 @font-face {
   font-family: "Yantramanav";
-  src: url("/fonts/Yantramanav-Thin.ttf");
+  src: url("../scss/fonts/Yantramanav-Thin.ttf");
 }
 
 .container_manage_rooms {
@@ -1353,7 +1353,7 @@ footer .container__menu a:hover {
 }
 
 .add_room_container form .form-group .amenities-container__item {
-  width: 11%;
+  width: 16%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1365,8 +1365,8 @@ footer .container__menu a:hover {
 }
 
 .add_room_container form .form-group .amenities-container__item input {
-  width: 20px;
-  height: 20px;
+  width: 23px;
+  height: 23px;
   margin-right: .6em;
   cursor: pointer;
 }
@@ -1403,17 +1403,17 @@ footer .container__menu a:hover {
 
 @font-face {
   font-family: "Roboto";
-  src: url("/fonts/Roboto-Bold.ttf");
+  src: url("../scss/fonts/Roboto-Bold.ttf");
 }
 
 @font-face {
   font-family: "Quicksand";
-  src: url("/fonts/quicksand.ttf");
+  src: url("../scss/fonts/quicksand.ttf");
 }
 
 @font-face {
   font-family: "Yantramanav";
-  src: url("/fonts/Yantramanav-Thin.ttf");
+  src: url("../scss/fonts/Yantramanav-Thin.ttf");
 }
 
 .delete-page {
@@ -1506,17 +1506,17 @@ footer .container__menu a:hover {
 
 @font-face {
   font-family: "Roboto";
-  src: url("/fonts/Roboto-Bold.ttf");
+  src: url("../scss/fonts/Roboto-Bold.ttf");
 }
 
 @font-face {
   font-family: "Quicksand";
-  src: url("/fonts/quicksand.ttf");
+  src: url("../scss/fonts/quicksand.ttf");
 }
 
 @font-face {
   font-family: "Yantramanav";
-  src: url("/fonts/Yantramanav-Thin.ttf");
+  src: url("../scss/fonts/Yantramanav-Thin.ttf");
 }
 
 .book-page {
@@ -1621,17 +1621,17 @@ footer .container__menu a:hover {
 
 @font-face {
   font-family: "Roboto";
-  src: url("/fonts/Roboto-Bold.ttf");
+  src: url("../scss/fonts/Roboto-Bold.ttf");
 }
 
 @font-face {
   font-family: "Quicksand";
-  src: url("/fonts/quicksand.ttf");
+  src: url("../scss/fonts/quicksand.ttf");
 }
 
 @font-face {
   font-family: "Yantramanav";
-  src: url("/fonts/Yantramanav-Thin.ttf");
+  src: url("../scss/fonts/Yantramanav-Thin.ttf");
 }
 
 .profile-page {
@@ -1707,17 +1707,17 @@ footer .container__menu a:hover {
 
 @font-face {
   font-family: "Roboto";
-  src: url("/fonts/Roboto-Bold.ttf");
+  src: url("../scss/fonts/Roboto-Bold.ttf");
 }
 
 @font-face {
   font-family: "Quicksand";
-  src: url("/fonts/quicksand.ttf");
+  src: url("../scss/fonts/quicksand.ttf");
 }
 
 @font-face {
   font-family: "Yantramanav";
-  src: url("/fonts/Yantramanav-Thin.ttf");
+  src: url("../scss/fonts/Yantramanav-Thin.ttf");
 }
 
 .show_book-page {

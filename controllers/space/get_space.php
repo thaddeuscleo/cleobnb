@@ -1,7 +1,9 @@
 <?php
 require 'db/database.php';
 
-session_start();
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
 
 function getById($id)
 {
@@ -21,17 +23,22 @@ function getAll()
     global $conn;
     $space_id = array();
     $imArr = array();
-    $spaceQuery = "SELECT * FROM spaces";
+    $id = $_SESSION['id'];
+    $spaceQuery = "SELECT * FROM spaces WHERE user_id = '$id'";
     $spaces = $conn->query($spaceQuery);
     $count = $spaces->num_rows;
+
     foreach ($spaces as $space) {
         array_push($space_id, $space['id']);
     }
+
     for ($i = 0; $i < $count; $i++) {
         $imageQuery = "SELECT image_path FROM space_images WHERE space_id = '$space_id[$i]' LIMIT 1";
         $images = $conn->query($imageQuery);
         $data = $images->fetch_assoc();
-        array_push($imArr, $data['image_path']);
+        if(isset($data['image_path'])){
+            array_push($imArr, $data['image_path']);
+        }
     }
     return array($spaces, $imArr);
 }

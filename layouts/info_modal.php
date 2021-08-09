@@ -1,4 +1,4 @@
-<?php session_start(); ?>
+
 
 <!-- TODO: Assign all errors and infos here-->
 <div class="info-modal">
