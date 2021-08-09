@@ -17,6 +17,25 @@
 }
 
 .search-result-flex {
+  min-height: 60vh;
+
+  .search-not-found {
+    width: 100%;
+    min-height: 60vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    h3 {
+      user-select: none;
+      text-transform: capitalize;
+      text-align: center;
+      font-family: $light-font;
+      font-weight: bolder;
+      font-size: 30pt;
+      color: rgb(158, 158, 158);
+    }
+  }
   .search-result-container {
     width: 100%;
     height: fit-content;

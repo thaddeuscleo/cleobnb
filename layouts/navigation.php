@@ -53,6 +53,8 @@ session_start();
                 <h5 onclick="onProfileClick()"><?= $_SESSION['username']; ?></h5>
                 <?php if ($_SESSION['role'] == 1) : ?>
                     <h5 onclick="onManageStayClick()">Manage Stays</h5>
+                <?php else : ?>
+                    <h5 onclick="onMyBooking()">My Bookings</h5>
                 <?php endif; ?>
                 <h5 onclick="onLogOutClick()">Log Out</h5>
             <?php else : ?>

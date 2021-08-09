@@ -55,3 +55,7 @@ const onProfileClick = () => {
 const onManageStayClick = () => {
     window.location.href = "/manage_my_space.php";
 }
+
+const onMyBooking = () => {
+    window.location.href = "/show_book.php";
+}

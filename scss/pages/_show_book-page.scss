@@ -1,0 +1,32 @@
+@import "../utils/shadows";
+@import "../utils/fonts";
+
+.show_book-page {
+    max-width: 100vw;
+    min-height: 60vh;
+
+    .header {
+        width: 80%;
+        margin: 1em auto;
+        font-size: 42pt;
+        font-family: $bold-font;
+    }
+
+    .card {
+        width: 80%;
+        margin: 1em auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-radius: 10px;
+        background-color: white;
+        padding: 2em;
+
+        p {
+            font-family: $light-font;
+        }
+        
+        @include underShadow;
+    }
+
+}

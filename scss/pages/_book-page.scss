@@ -1,31 +1,43 @@
-@import "../utils/colors";
+@import "../utils/shadows";
 @import "../utils/fonts";
 
-.delete-page {
-    min-height: 60vh;
+.book-page {
     max-width: 100vw;
+    min-height: 55vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    
+
     .form {
         width: 50%;
-        height: 50%;
-        background-color: $soft-white;
-        border-radius: 20px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        padding: .8em;
+        background-color: rgba(241, 241, 241, 0.685);
+        padding: 1em;
+        border-radius: 10px;
+        @include underShadow;
 
         h1 {
             font-family: $bold-font;
-            text-transform: uppercase;
-            font-weight: bolder;
         }
 
-        p {
-            font-family: $light-font;
+        &__price {
+            margin: 1em 0;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+
+            div{
+                width: 15em;
+                margin: 0 auto;
+
+                p {
+                    display: flex;
+                    justify-content: space-between;
+                    font-family: $light-font;
+
+                    input {
+                        width: 3em;
+                    }
+                }
+            }
         }
 
         .buttons {
@@ -65,4 +77,6 @@
             }
         }
     }
+
+    
 }

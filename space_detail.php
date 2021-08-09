@@ -24,7 +24,7 @@ list($data, $images, $amenities) = getById($id);
     <!-- TODO: Show update and delete button log in as a host -->
     <!-- TODO: Show book button when log in as a user -->
     <?php if (isset($_SESSION['role'])) : ?>
-        <?php if ($_SESSION['role'] == 1) : ?>
+        <?php if ($_SESSION['role'] == 1 && $_SESSION['username'] == $data['username']) : ?>
             <div class="buttons">
                 <a href="update_space.php?id=<?= $id ?>" class="btn update">Update</a>
                 <a href="delete_space.php?id=<?= $id ?>" class="btn delete">Delete</a>
@@ -32,7 +32,7 @@ list($data, $images, $amenities) = getById($id);
         <?php endif; ?>
         <?php if ($_SESSION['role'] == 0) : ?>
             <div class="buttons">
-                <a href="" class="btn delete">Book</a>
+                <a href="book_space.php?id=<?= $id ?>" class="btn delete">Book</a>
             </div>
         <?php endif; ?>
     <?php else : ?>

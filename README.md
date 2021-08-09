@@ -78,3 +78,10 @@ AS A HOST:
 
 
 
+book
+- id
+- user-id
+- space-id
+- start-date
+- end-date
+- price

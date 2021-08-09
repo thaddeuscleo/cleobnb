@@ -817,6 +817,37 @@ footer .container__menu a:hover {
   border: 1px solid rgba(128, 128, 128, 0.15);
 }
 
+.search-result-flex {
+  min-height: 60vh;
+}
+
+.search-result-flex .search-not-found {
+  width: 100%;
+  min-height: 60vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.search-result-flex .search-not-found h3 {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  text-transform: capitalize;
+  text-align: center;
+  font-family: "Quicksand";
+  font-weight: bolder;
+  font-size: 30pt;
+  color: #9e9e9e;
+}
+
 .search-result-flex .search-result-container {
   width: 100%;
   height: -webkit-fit-content;
@@ -1471,6 +1502,257 @@ footer .container__menu a:hover {
 
 .delete-page .form .buttons button {
   background-color: #d70466;
+}
+
+@font-face {
+  font-family: "Roboto";
+  src: url("/fonts/Roboto-Bold.ttf");
+}
+
+@font-face {
+  font-family: "Quicksand";
+  src: url("/fonts/quicksand.ttf");
+}
+
+@font-face {
+  font-family: "Yantramanav";
+  src: url("/fonts/Yantramanav-Thin.ttf");
+}
+
+.book-page {
+  max-width: 100vw;
+  min-height: 55vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.book-page .form {
+  width: 50%;
+  background-color: rgba(241, 241, 241, 0.685);
+  padding: 1em;
+  border-radius: 10px;
+  -webkit-box-shadow: -1px 10px 20px -6px rgba(0, 0, 0, 0.1);
+  box-shadow: -1px 10px 20px -6px rgba(0, 0, 0, 0.1);
+}
+
+.book-page .form h1 {
+  font-family: "Roboto";
+}
+
+.book-page .form__price {
+  margin: 1em 0;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+}
+
+.book-page .form__price div {
+  width: 15em;
+  margin: 0 auto;
+}
+
+.book-page .form__price div p {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  font-family: "Quicksand";
+}
+
+.book-page .form__price div p input {
+  width: 3em;
+}
+
+.book-page .form .buttons {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.book-page .form .buttons a, .book-page .form .buttons button {
+  width: 50%;
+  height: 10%;
+  border: none;
+  margin: 1em;
+  padding: .3em .8em;
+  font-size: 15pt;
+  font-family: "Quicksand";
+  font-weight: bolder;
+  text-align: center;
+  text-decoration: none;
+  color: white;
+  border-radius: 10px;
+  -webkit-transition: 1s;
+  transition: 1s;
+  cursor: pointer;
+}
+
+.book-page .form .buttons a:hover, .book-page .form .buttons button:hover {
+  -webkit-filter: grayscale(1) brightness(0.5);
+          filter: grayscale(1) brightness(0.5);
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+.book-page .form .buttons a {
+  background-color: #b9b9b9;
+}
+
+.book-page .form .buttons button {
+  background-color: #d70466;
+}
+
+@font-face {
+  font-family: "Roboto";
+  src: url("/fonts/Roboto-Bold.ttf");
+}
+
+@font-face {
+  font-family: "Quicksand";
+  src: url("/fonts/quicksand.ttf");
+}
+
+@font-face {
+  font-family: "Yantramanav";
+  src: url("/fonts/Yantramanav-Thin.ttf");
+}
+
+.profile-page {
+  max-width: 100vw;
+  min-height: 60vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.profile-page .form {
+  margin: 0 auto;
+  width: 50%;
+  padding: 1em;
+}
+
+.profile-page .form h1 {
+  font-family: "Roboto";
+  font-size: 40pt;
+}
+
+.profile-page .form .buttons {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.profile-page .form .buttons a, .profile-page .form .buttons button {
+  width: 50%;
+  height: 10%;
+  border: none;
+  margin: 1em;
+  padding: .3em .8em;
+  font-size: 15pt;
+  font-family: "Quicksand";
+  font-weight: bolder;
+  text-align: center;
+  text-decoration: none;
+  color: white;
+  border-radius: 10px;
+  -webkit-transition: 1s;
+  transition: 1s;
+  cursor: pointer;
+}
+
+.profile-page .form .buttons a:hover, .profile-page .form .buttons button:hover {
+  -webkit-filter: grayscale(1) brightness(0.5);
+          filter: grayscale(1) brightness(0.5);
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+.profile-page .form .buttons a {
+  background-color: #b9b9b9;
+}
+
+.profile-page .form .buttons button {
+  background-color: #d70466;
+}
+
+@font-face {
+  font-family: "Roboto";
+  src: url("/fonts/Roboto-Bold.ttf");
+}
+
+@font-face {
+  font-family: "Quicksand";
+  src: url("/fonts/quicksand.ttf");
+}
+
+@font-face {
+  font-family: "Yantramanav";
+  src: url("/fonts/Yantramanav-Thin.ttf");
+}
+
+.show_book-page {
+  max-width: 100vw;
+  min-height: 60vh;
+}
+
+.show_book-page .header {
+  width: 80%;
+  margin: 1em auto;
+  font-size: 42pt;
+  font-family: "Roboto";
+}
+
+.show_book-page .card {
+  width: 80%;
+  margin: 1em auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-radius: 10px;
+  background-color: white;
+  padding: 2em;
+  -webkit-box-shadow: -1px 10px 20px -6px rgba(0, 0, 0, 0.1);
+  box-shadow: -1px 10px 20px -6px rgba(0, 0, 0, 0.1);
+}
+
+.show_book-page .card p {
+  font-family: "Quicksand";
 }
 
 * {

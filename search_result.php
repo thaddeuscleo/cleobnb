@@ -15,14 +15,19 @@ $count = 0;
 </div>
 
 <div class="container search-result-flex">
+    <?php if ($results->num_rows == 0) : ?>
+        <div class="search-not-found">
+            <h3>No Stay Available within <?= $startDate ?> - <?= $endDate ?> ¯\_(ツ)_/¯</h3>
+        </div>
+    <?php endif; ?>
     <?php foreach ($results as $result) : ?>
         <div class="search-result-container">
-            <a href="space_detail.php?id=<?= $result['id']?>">
+            <a href="space_detail.php?id=<?= $result['id'] ?>">
                 <img src="uploads/<?= $images[$count] ?>" alt="">
             </a>
             <div class="search-result-container__text">
                 <p><?= $result['place_type']; ?> in <?= $result['location']; ?></p>
-                <a href="space_detail.php?id=<?= $result['id']?>">
+                <a href="space_detail.php?id=<?= $result['id'] ?>">
                     <h3><?= $result['name'] ?></h3>
                 </a>
                 <hr>
