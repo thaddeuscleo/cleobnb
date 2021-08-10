@@ -267,43 +267,43 @@ function validateField(
 
     if ($guessCount < 1) {
         echo "Guess "."not valid!"."<br>";
-        $_SESSION['guess_err'] = "Guess Can't Be Empty";
+        $_SESSION['guess_err'] = "Guess Can't be less than 1";
         return false;
     }
 
     if ($bedroomCount < 1) {
         echo "Bedroom "."not valid!"."<br>";
-        $_SESSION['bedroom_err'] = "Bedroom can't be empty";
+        $_SESSION['bedroom_err'] = "Bedroom can't be less than 1";
         return false;
     }
 
     if ($bedCount < 1) {
         echo "Bed "."not valid!"."<br>";
-        $_SESSION['bed_err'] = "Bed can't be empty";
+        $_SESSION['bed_err'] = "Bed can't be less than 1";
         return false;
     }
 
     if ($bathroomCount < 1) {
         echo "Bathroom "."not valid!"."<br>";
-        $_SESSION['bathroom_err'] = "Bathroom can't be empty";
+        $_SESSION['bathroom_err'] = "Bathroom can't be less than 1";
         return false;
     }
 
     if ($showerCount < 1) {
         echo "Shower "."not valid!"."<br>";
-        $_SESSION['shower_err'] = "Shower can't be empty";
+        $_SESSION['shower_err'] = "Shower can't be less than 1";
         return false;
     }
 
     if ($bathubCount < 1) {
         echo "Bathub "."not valid!"."<br>";
-        $_SESSION['bathub_err'] = "Bathub can't be empty";
+        $_SESSION['bathub_err'] = "Bathub can't be less than 1";
         return false;
     }
 
     if (strlen($placeType) < 1) {
         echo "Place "."not valid!"."<br>";
-        $_SESSION['placeType_err'] = "Place Type Can't be empty";
+        $_SESSION['placeType_err'] = "Place Type Can't be less than 1";
         return false;
     }
 

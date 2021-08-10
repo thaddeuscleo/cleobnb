@@ -10,22 +10,25 @@
 
     &__form {
       width: 50vw;
-      height: 80vh;
-
+      height: 98vh;
 
       form {
-
         h2 {
           font-family: $bold-font;
           font-weight: bold;
           font-size: 75pt;
-          margin-bottom: .5em;
+          margin-bottom: 0.5em;
+        }
+
+
+        .ext {
+          margin-bottom: 3em;
         }
 
         .form-control {
           width: 100%;
           margin-bottom: 1em;
-
+          
           input {
             width: 80%;
             padding: 1.8em;
@@ -36,13 +39,16 @@
           label {
             display: block;
             font-family: $light-font;
-            margin-bottom: .5em;
-            margin-left: .8em;
+            margin-bottom: 0.5em;
+            margin-left: 0.8em;
             font-weight: bold;
             color: $dark-gray;
           }
 
+          
+
           button {
+            text-align: center;
             background-color: $cherry-red;
             color: white;
             border: none;
@@ -54,13 +60,8 @@
             &:hover {
               opacity: 90%;
             }
-          }
-
-          .ext {
-            margin-bottom: 2em;
-          }
+          }          
         }
-
       }
     }
   }

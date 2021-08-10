@@ -30,24 +30,30 @@ function validate_email($email)
 {
     global $conn;
     $selQuery = "SELECT id FROM users WHERE email LIKE '$email'";
-    $res = $conn->query($selQuery)->fetch_asso();
+    $res = $conn->query($selQuery)->fetch_assoc();
     
     if(isset($res)){
+        $_SESSION["email_err"] = "Email already been taken by another user";
         return false;
     }
     if (strlen($email) <= 0) {
+        $_SESSION["email_err"] = "Invalid email address";
         return false;
     }
     if (strpos($email, '@.') !== false) {
+        $_SESSION["email_err"] = "Invalid email address";
         return false;
     }
     if (strpos($email, '.@') !== false) {
+        $_SESSION["email_err"] = "Invalid email address";
         return false;
     }
     if (startsWith($email, '.com')) {
+        $_SESSION["email_err"] = "Invalid email address";
         return false;
     }
     if (!endsWith($email, '.com')) {
+        $_SESSION["email_err"] = "Invalid email address";
         return false;
     }
     return true;
@@ -61,7 +67,6 @@ function validate_register_form($username, $email, $password, $confirm_password)
         return false;
     }
     if (is_null($email) || !validate_email($email)) {
-        $_SESSION["email_err"] = "Invalid email address";
         return false;
     }
     if (is_null($password) || strlen($password) < 8) {
@@ -103,8 +108,7 @@ function insert_host($username, $email, $password)
 function register_user($role)
 {
     list($username, $email, $password, $confirm_password) = get_post_data();
-    // $is_valid = validate_register_form($username, $email, $password, $confirm_password);
-    $is_valid = true;
+    $is_valid = validate_register_form($username, $email, $password, $confirm_password);
     if ($is_valid) {
         if($role == 0){
             insert_user($username, $email, $password);
