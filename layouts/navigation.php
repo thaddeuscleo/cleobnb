@@ -22,7 +22,7 @@ if (session_status() === PHP_SESSION_NONE) {
         <div class="container">
             <div class="nav__logo">
                 <a href="../index.php">
-                    <img src="images/airbnb.svg" alt="logo">
+                    <img src="images/cleobnb-logo.png" alt="logo">
                 </a>
             </div>
             <div class="nav__search-input">
@@ -120,9 +120,6 @@ if (session_status() === PHP_SESSION_NONE) {
                     <h5>Location</h5>
                     <input type="text" name="location" id="location" placeholder="Location" autocomplete="off">
                     <div class="suggestion-con" id="suggestion-con">
-                        <div class="item">
-                            hello
-                        </div>
                     </div>
                 </div>
                 <div class="search-comp date-comp">
