@@ -21,7 +21,7 @@
                     <label for="password">Confirmation Password</label>
                     <input type="password" name="confirm" id="password" placeholder="">
                 </div>
-                <div class="form-control">
+                <div class="form-control ext">
                     <button name="host_sign_up">Become A Host</button>
                 </div>
             </form>

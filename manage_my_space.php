@@ -1,5 +1,7 @@
 <?php
-session_start();
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
 if ($_SESSION['role'] != 1) {
     header('Location: ../../host_register.php');
 }

@@ -1,11 +1,16 @@
 <?php
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
+if ($_SESSION['role'] != 1) {
+    header('Location: ../../host_register.php');
+}
 
 require 'controllers/space/get_space.php';
 
 $id = $_GET['id'];
 list($space, $images, $amenities) = getById($id);
 // echo "<pre>".var_export($amenities, true)."</pre>"
-
 ?>
 
 <?php include "layouts/navigation.php"; ?>

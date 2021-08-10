@@ -28,6 +28,13 @@ function endsWith($haystack, $needle)
 
 function validate_email($email)
 {
+    global $conn;
+    $selQuery = "SELECT id FROM users WHERE email LIKE '$email'";
+    $res = $conn->query($selQuery)->fetch_asso();
+    
+    if(isset($res)){
+        return false;
+    }
     if (strlen($email) <= 0) {
         return false;
     }

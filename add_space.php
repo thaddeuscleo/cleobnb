@@ -1,3 +1,13 @@
+<?php
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
+if ($_SESSION['role'] != 1) {
+    header('Location: ../../host_register.php');
+}
+
+?>
+
 <?php include "layouts/navigation.php"; ?>
 
 <div class="add_room_container">

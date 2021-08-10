@@ -34,7 +34,7 @@ if (session_status() === PHP_SESSION_NONE) {
                 </button>
             </div>
             <div class="nav__user-buttons">
-                <button class="nav__user-buttons__become-host">
+                <button class="nav__user-buttons__become-host" onclick="onHostYourHomeClick()">
                     Become a host
                 </button>
                 <button class="nav__user-buttons__language">
@@ -99,7 +99,7 @@ if (session_status() === PHP_SESSION_NONE) {
                             <button name="log_in">Login</button>
                         </div>
                         <div class="link">
-                            <a href="">I don't have an account</a>
+                            <a href="../signUp.php">I don't have an account</a>
                         </div>
                     </form>
                 </div>
@@ -107,7 +107,7 @@ if (session_status() === PHP_SESSION_NONE) {
         </div>
     </div>
 
-    <form action="../search_result.php" method="GET">
+    <form action="../search_result.php" method="GET" autocomplete="off">
         <div class="search-modal" id="search-form">
             <div class="close-modal">
                 <span class="material-icons" id="close-modal" onclick="onLoginDialogClose()">
@@ -118,7 +118,12 @@ if (session_status() === PHP_SESSION_NONE) {
             <div class="comps">
                 <div class="search-comp">
                     <h5>Location</h5>
-                    <input type="text" name="location" id="location" placeholder="Location">
+                    <input type="text" name="location" id="location" placeholder="Location" autocomplete="off">
+                    <div class="suggestion-con" id="suggestion-con">
+                        <div class="item">
+                            hello
+                        </div>
+                    </div>
                 </div>
                 <div class="search-comp date-comp">
                     <div class="date-ipt">
@@ -147,11 +152,46 @@ if (session_status() === PHP_SESSION_NONE) {
         const formElement = document.getElementById('search-form');
         const closeButton = document.getElementById('close-modal');
         const searchBtn = document.getElementById('search-btn');
+        const locationInput = document.getElementById('location');
+        const suggestionCon = document.getElementById('suggestion-con');
+        
         searchBox.addEventListener('click', () => {
             formElement.style.display = "block";
         });
         closeButton.addEventListener('click', () => {
             formElement.style.display = "none";
+        });
+
+        locationInput.addEventListener('focusin', ()=> {
+            suggestionCon.style.display = "block";
+        });
+
+        const Suggestion_URL = `http://localhost:8080/controllers/search/suggestion.php`;
+        locationInput.addEventListener('keyup', ()=> {
+            if(locationInput.value.length >= 1){
+                const URL = `${Suggestion_URL}?query=${locationInput.value}`
+                fetch(URL)
+                    .then(data => data.json())
+                    .then(locations => {
+                        suggestionCon.innerHTML = '';
+                        locations.forEach(element => {
+                            suggestionCon.innerHTML += `
+                                <div class="item">
+                                    ${element}
+                                </div>
+                            `
+                        });
+                        const items = document.querySelectorAll(".item");
+                        items.forEach(element => {
+                            element.addEventListener('click', () => {
+                                locationInput.value = element.innerText;
+                                suggestionCon.style.display = "none";
+                            })
+                        });
+                    });
+            }else {
+                suggestionCon.innerHTML = '';   
+            }
         });
     </script>
 

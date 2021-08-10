@@ -327,6 +327,28 @@ nav {
     .search-comp{
       margin: 1em;
 
+      .suggestion-con {
+        width: 100%;
+        transition: ease .7s;
+        display: none;
+        
+        .item {
+          background-color: white;
+          padding: .5em .9em;
+          margin: .5em .2em;
+          border-radius: 10px;
+          font-family: $light-font;
+          font-weight: bolder;
+          transition: ease .5s;
+          cursor: pointer;
+
+          &:hover {
+            background-color: rgba(119, 119, 119, 0.699);
+            color: white;
+          }
+        }
+      }
+
       input {
         border: none;
         padding: .8em;

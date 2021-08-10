@@ -1,7 +1,11 @@
 <?php
-require './db/database.php';
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
 
-$selQuery = "SELECT s.name, ub.start_date, ub.end_date FROM user_books ub JOIN spaces s ON ub.space_id = s.id";
+require './db/database.php';
+$userId = $_SESSION['id']; 
+$selQuery = "SELECT s.name, ub.start_date, ub.end_date FROM user_books ub JOIN spaces s ON ub.space_id = s.id WHERE ub.user_id = '$userId'";
 $rows = $conn->query($selQuery);
 $res = [];
 while($data = $rows->fetch_assoc()){
