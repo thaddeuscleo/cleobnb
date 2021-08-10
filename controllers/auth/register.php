@@ -69,11 +69,11 @@ function validate_register_form($username, $email, $password, $confirm_password)
     if (is_null($email) || !validate_email($email)) {
         return false;
     }
-    if (is_null($password) || strlen($password) < 8) {
+    if (empty($password) || strlen($password) < 8) {
         $_SESSION["password_err"] = "Password minimal 8 characters long";
         return false;
     }
-    if (is_null($confirm_password) || $password !== $confirm_password) {
+    if (empty($confirm_password) || $password != $confirm_password) {
         $_SESSION["confirm_err"] = "Confirm doesn't match";
         return false;
     }
