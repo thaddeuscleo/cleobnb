@@ -19,7 +19,7 @@
                 </div>
                 <div class="form-control">
                     <label for="password">Confirmation Password</label>
-                    <input type="password" name="confirm" id="password" placeholder="">
+                    <input type="password" name="confirm_password" id="password" placeholder="">
                 </div>
                 <div class="form-control ext center">
                     <button name="host_sign_up">Become A Host</button>
