@@ -1,32 +1,21 @@
 <?php
-if (session_status() === PHP_SESSION_NONE) {
-    session_start();
-}
-
-require './db/database.php';
-$userId = $_SESSION['id']; 
-$selQuery = "SELECT s.name, ub.start_date, ub.end_date FROM user_books ub JOIN spaces s ON ub.space_id = s.id WHERE ub.user_id = '$userId'";
-$rows = $conn->query($selQuery);
-$res = [];
-while($data = $rows->fetch_assoc()){
-    $res[] = $data;
-}
-// echo "<pre>" . var_export($res, true) . "</pre>"
+// TODO: Fetch all required data here
 ?>
 
 <?php include "layouts/navigation.php"; ?>
 
 <div class="show_book-page">
     <h1 class="header">My Booking</h1>
-    <?php foreach ($res as $r) : ?>
-        <div class="card">
-            <p><?=$r['name']?></p>
-            <div>
-                <p>Start Date: <?=$r['start_date']?></p>
-                <p>End Date: <?=$r['end_date']?></p>
-            </div>
+    <!-- TODO: Show the booked transaction here -->
+    <!-- LOOP STARTS HERE -->
+    <div class="card">
+        <p><!-- TODO: Show the space name --></p>
+        <div>
+            <p>Start Date: <!-- TODO: Show the start date --></p>
+            <p>End Date: <!-- TODO: Show the end date --></p>
         </div>
-    <?php endforeach; ?>
+    </div>
+    <!-- LOOP ENDS HERE -->
 </div>
 
 <?php include "layouts/footer.php"; ?>

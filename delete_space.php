@@ -1,13 +1,6 @@
 <?php
-if (session_status() === PHP_SESSION_NONE) {
-    session_start();
-}
-if ($_SESSION['role'] != 1) {
-    header('Location: ../../host_register.php');
-}
 
-$id = $_GET['id'];
-
+// TODO: Make sure only host can access this page
 ?>
 
 <?php include "layouts/navigation.php"; ?>
@@ -20,7 +13,7 @@ $id = $_GET['id'];
             <a href="manage_my_space.php">Back</a>
             <button name="delete_space">Delete</button>
         </div>
-        <input type="text" name="id" value="<?= $id ?>" hidden>
+        <input type="text" name="id" value="1" hidden>
     </form>
 </div>
 

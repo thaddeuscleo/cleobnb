@@ -1,16 +1,9 @@
 <?php
-if (session_status() === PHP_SESSION_NONE) {
-    session_start();
-}
-if ($_SESSION['role'] != 1) {
-    header('Location: ../../host_register.php');
-}
 
-require 'controllers/space/get_space.php';
+// TODO: Get all required data here\
+// TODO: Fill the all form with recorded data in the database
+// You can ignore image not filled when the page is loaded
 
-$id = $_GET['id'];
-list($space, $images, $amenities) = getById($id);
-// echo "<pre>".var_export($amenities, true)."</pre>"
 ?>
 
 <?php include "layouts/navigation.php"; ?>
@@ -25,25 +18,25 @@ list($space, $images, $amenities) = getById($id);
 
         <div class="form-group">
             <h2>What's Your Space Name</h2>
-            <input type="text" placeholder="Space Name" name="space-name" value="<?= $space['name'] ?>">
+            <input type="text" placeholder="Space Name" name="space-name" value="">
             <h4>Availablelity Date</h4>
             <div class="date-start-end">
                 <h5>Start</h5>
-                <input type="date" name="start-date" id="" value="<?= $space['start_date'] ?>">
+                <input type="date" name="start-date" id="" value="">
                 <h5>End</h5>
-                <input type="date" name="end-date" id="" value="<?= $space['end_date'] ?>">
+                <input type="date" name="end-date" id="" value="">
             </div>
             <h4>Location</h4>
             <div class="date-start-end">
-                <input type="text" name="location" id="" placeholder="location" value="<?= $space['location'] ?>">
+                <input type="text" name="location" id="" placeholder="location" value="">
             </div>
             <h4>Price</h4>
             <div class="date-start-end">
-                <input type="number" name="price" id="" placeholder="price" value="<?= $space['price'] ?>">
+                <input type="number" name="price" id="" placeholder="price" value="">
             </div>
             <h4>About</h4>
             <div class="date-start-end">
-                <textarea name="about" id="" cols="30" rows="10"><?= $space['about'] ?></textarea>
+                <textarea name="about" id="" cols="30" rows="10"></textarea>
             </div>
         </div>
 
@@ -52,25 +45,25 @@ list($space, $images, $amenities) = getById($id);
 
             <h4>Guess Capacity</h4>
             <div class="date-start-end">
-                <input type="number" name="guess-count" id="" value="<?= $space['guess_count'] ?>">
+                <input type="number" name="guess-count" id="" value="">
             </div>
 
             <h4>Bed Room</h4>
             <div class="date-start-end">
                 <h5>Number Of Bedroom</h5>
-                <input type="number" name="bedroom-count" id="" value="<?= $space['bedroom_count'] ?>">
+                <input type="number" name="bedroom-count" id="" value="">
                 <h5>Number Of Beds</h5>
-                <input type="number" name="bed-count" id="" value="<?= $space['bed_count'] ?>">
+                <input type="number" name="bed-count" id="" value="">
             </div>
 
             <h4>Bath Room</h4>
             <div class="date-start-end">
                 <h5>Number Of Bath Room</h5>
-                <input type="number" name="bathroom-count" id="" value="<?= $space['bathroom_count'] ?>">
+                <input type="number" name="bathroom-count" id="" value="">
                 <h5>Bathroom with shower</h5>
-                <input type="number" name="shower-count" id="" value="<?= $space['shower_count'] ?>">
+                <input type="number" name="shower-count" id="" value="">
                 <h5>Bathroom bathtub</h5>
-                <input type="number" name="bathub-count" id="" value="<?= $space['bathub_count'] ?>">
+                <input type="number" name="bathub-count" id="" value="">
             </div>
 
             <h4>Place Type</h4>
@@ -90,7 +83,7 @@ list($space, $images, $amenities) = getById($id);
                 <h4>Amenities</h4>
                 <div class="amenities-container">
                     <div class="amenities-container__item">
-                        <input type="checkbox" name="kitchen" id="" <?php echo (($amenities['kitchen'] == 1) ? "checked" : "") ?>>
+                        <input type="checkbox" name="kitchen" id="">
                         <div>
                             <span class="material-icons">
                                 restaurant
@@ -99,7 +92,7 @@ list($space, $images, $amenities) = getById($id);
                         </div>
                     </div>
                     <div class="amenities-container__item">
-                        <input type="checkbox" name="free-parking" id="" <?php echo (($amenities['free_parking'] == 1) ? "checked" : "") ?>>
+                        <input type="checkbox" name="free-parking" id="">
                         <div>
                             <span class="material-icons">
                                 directions_car
@@ -108,7 +101,7 @@ list($space, $images, $amenities) = getById($id);
                         </div>
                     </div>
                     <div class="amenities-container__item">
-                        <input type="checkbox" name="pets-allowed" id="" <?php echo (($amenities['pets_allowed'] == 1 ? "checked" : "")) ?>>
+                        <input type="checkbox" name="pets-allowed" id="">
                         <div>
                             <span class="material-icons">
                                 pets
@@ -117,7 +110,7 @@ list($space, $images, $amenities) = getById($id);
                         </div>
                     </div>
                     <div class="amenities-container__item">
-                        <input type="checkbox" name="wifi" id="" <?php echo (($amenities['wifi'] == 1 ? "checked" : "")) ?>>
+                        <input type="checkbox" name="wifi" id="">
                         <div>
                             <span class="material-icons">
                                 wifi
@@ -126,7 +119,7 @@ list($space, $images, $amenities) = getById($id);
                         </div>
                     </div>
                     <div class="amenities-container__item">
-                        <input type="checkbox" name="backyard" id="" <?php echo (($amenities['backyard'] == 1 ? "checked" : "")) ?>>
+                        <input type="checkbox" name="backyard" id="">
                         <div>
                             <span class="material-icons">
                                 local_florist
@@ -135,7 +128,7 @@ list($space, $images, $amenities) = getById($id);
                         </div>
                     </div>
                     <div class="amenities-container__item">
-                        <input type="checkbox" name="security-camera" id="" <?php echo (($amenities['security_camera'] == 1 ? "checked" : "")) ?>>
+                        <input type="checkbox" name="security-camera" id="">
                         <div>
                             <span class="material-icons">
                                 videocam
@@ -144,7 +137,7 @@ list($space, $images, $amenities) = getById($id);
                         </div>
                     </div>
                     <div class="amenities-container__item">
-                        <input type="checkbox" name="hot-tub" id="" <?php echo (($amenities['hot_tub'] == 1 ? "checked" : "")) ?>>
+                        <input type="checkbox" name="hot-tub" id="">
                         <div>
                             <span class="material-icons">
                                 hot_tub
@@ -153,7 +146,7 @@ list($space, $images, $amenities) = getById($id);
                         </div>
                     </div>
                     <div class="amenities-container__item">
-                        <input type="checkbox" name="smoke-alarm" id="" <?php echo (($amenities['smoke_alarm'] == 1 ? "checked" : "")) ?>>
+                        <input type="checkbox" name="smoke-alarm" id="">
                         <div>
                             <span class="material-icons">
                                 lens
@@ -162,7 +155,7 @@ list($space, $images, $amenities) = getById($id);
                         </div>
                     </div>
                     <div class="amenities-container__item">
-                        <input type="checkbox" name="dedicated-workspace" id="" <?php echo (($amenities['dedicated_workspace'] == 1 ? "checked" : "")) ?>>
+                        <input type="checkbox" name="dedicated-workspace" id="">
                         <div>
                             <span class="material-icons">
                                 cases
@@ -182,7 +175,7 @@ list($space, $images, $amenities) = getById($id);
             </div>
         </div>
 
-        <input type="number" value="<?= $id ?>" name="id" hidden>
+        <input type="number" value="1" name="id" hidden>
 
         <button name="update_space">Confirm Update This Space</button>
     </form>

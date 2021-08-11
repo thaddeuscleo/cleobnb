@@ -1,23 +1,11 @@
 <?php
 
-
-require 'controllers/space/get_space.php';
-
-$id = $_GET['id'];
-
-list($data, $images, $amenities) = getById($id);
-
-$location = $_COOKIE['location'];
-$startDate = $_COOKIE['startDate'];
-$endDate = $_COOKIE['endDate'];
-$guessCount = $_COOKIE['guessCount'];
-$basePrice = ($data['price'] + ($data['price'] * 15 / 100 * ($guessCount - 1))) * $_COOKIE['diff'];
-$cleanService = $basePrice * 5 / 100;
-$guessService = $basePrice * 8 / 100;
-$totalPrice = $basePrice + $cleanService + $guessService;
+// TODO: Fetch all required data according to the selected space bu the user
+// TODO: Calculate the price with the formula that has been provided  
 
 function localizeCurrency($cash)
 {
+    // TODO: return indonesia currency format 
     return 'Rp' . (number_format($cash, 2, ',', '.'));
 }
 ?>
@@ -26,20 +14,28 @@ function localizeCurrency($cash)
 
 <div class="book-page">
     <form action="controllers/space/book_space.php" class="form" method="POST">
-        <h1>Book <?= $data['name']; ?> Stay Hosted By <?= $data['username'] ?></h1>
+        <!-- TODO: Show the space and the owner name -->
+        <h1>Book Hanran Stay Hosted By NITH</h1>
         <div class="form__price">
             <div>
-                <p>Nights <b><?= $startDate ?> - <?= $endDate ?></b></p>
-                <p>Number Of Guess <b><?= $guessCount ?></b></p>
-                <p>Price /Night <b><?= localizeCurrency($data['price']) ?></b></p>
+                <!-- TODO: Show the booking start date and end date-->
+                <p>Nights <b>10 Aug - 11 Aug</b></p>
+                <!-- TODO: Show the number of guess that are going to book this stay -->
+                <p>Number Of Guess <b>2</b></p>
+                <!-- TODO: Show the base price of this space for every night -->
+                <p>Price /Night <b>10</b></p>
             </div>
             <div>
-                <p>Guess Price <b><?= localizeCurrency($basePrice) ?> </b></p>
-                <p>Cleaning Service <b><?= localizeCurrency($cleanService) ?></b></p>
-                <p>Guess Service <b><?= localizeCurrency($guessService) ?></b></p>
-                <p>Total <b><?= localizeCurrency($totalPrice) ?></b></p>
+                <!-- TODO: Show the guess price -->
+                <p>Guess Price <b>Rp. 100.000,00 </b></p>
+                <!-- TODO: Show the cleaning service price -->
+                <p>Cleaning Service <b>Rp. 100.000,00</b></p>
+                <!-- TODO: Show the guess service price -->
+                <p>Guess Service <b>Rp. 100.000,00</b></p>
+                <!-- TODO: Show the total price -->
+                <p>Total <b>Rp. 100.000,00</b></p>
             </div>
-            <input type="hidden" name="choosen_id" value="<?= $id ?>">
+            <input type="hidden" name="choosen_id" value="1">
         </div>
         <div class="buttons">
             <a href="index.php">Back To Home</a>
@@ -47,10 +43,5 @@ function localizeCurrency($cash)
         </div>
     </form>
 </div>
-
-
-<script>
-
-</script>
 
 <?php include "layouts/footer.php"; ?>

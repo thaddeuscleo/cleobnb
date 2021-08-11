@@ -30,32 +30,25 @@ const onLoginClick = () => {
 }
 
 const onSignUpClick = () => {
-    window.location.href = "/signUp.php";
+    // TODO: Go TO Sign Up Page
 }
 
 const onHostYourHomeClick = () => {
-    // TODO: Redirect User to Hosting Page
-    window.location.href = "/host_register.php";
-}
-
-const onHelpClick = () => {
-    // TODO: Redirect User to Help Page
+    // TODO: Go To Host Registration Page
 }
 
 const onLogOutClick = () => {
-    // TODO: Go to log out
-    window.location.href = "/controllers/auth/logout.php";
+    // TODO: Log the user out
 }
 
 const onProfileClick = () => {
-    // TODO: Go to profile
-    window.location.href = "/profile.php";
+    // TODO: Go To Profile Page
 }
 
 const onManageStayClick = () => {
-    window.location.href = "/manage_my_space.php";
+    // TODO: Go To Manage Spage Page
 }
 
 const onMyBooking = () => {
-    window.location.href = "/show_book.php";
+    // TODO: Go To Show Bookings Page
 }

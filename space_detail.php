@@ -1,11 +1,6 @@
 <?php
 
-require 'controllers/space/get_space.php';
-
-$id = $_GET['id'];
-
-list($data, $images, $amenities) = getById($id);
-// echo "<pre>" . var_export($data, true) . "</pre>"
+// TODO: Fetch all required data here
 ?>
 
 
@@ -21,70 +16,49 @@ list($data, $images, $amenities) = getById($id);
         </div>
     </div>
     <!-- TODO: Show sign up to book when the guess visit this page -->
-    <!-- TODO: Show update and delete button log in as a host -->
-    <!-- TODO: Show book button when log in as a user -->
-    <?php if (isset($_SESSION['role'])) : ?>
-        <?php if ($_SESSION['role'] == 1 && $_SESSION['username'] == $data['username']) : ?>
-            <div class="buttons">
-                <a href="update_space.php?id=<?= $id ?>" class="btn update">Update</a>
-                <a href="delete_space.php?id=<?= $id ?>" class="btn delete">Delete</a>
-            </div>
-        <?php endif; ?>
-        <?php if ($_SESSION['role'] == 0) : ?>
-            <div class="buttons">
-                <a href="book_space.php?id=<?= $id ?>" class="btn delete">Book</a>
-            </div>
-        <?php endif; ?>
-    <?php else : ?>
-        <div class="buttons">
-            <a href="signUp.php" class="btn delete">Sign Up To Book</a>
-        </div>
-    <?php endif; ?>
+    <!-- TODO: Show update and delete button when logged in as a host -->
+    <!-- TODO: Show book button when logged in as a normal user -->
+    <div class="buttons">
+        <a href="update_space.php?id=1" class="btn update">Update</a>
+        <a href="delete_space.php?id=1" class="btn delete">Delete</a>
+    </div>
 </div>
 
 <div class="container detail-image-container">
 
     <!-- TODO: Show Arrow Button when image more than one -->
-    <?php if ($images->num_rows > 1) : ?>
-        <div class="button">
-            <span class="material-icons" id="prev">
-                chevron_left
-            </span>
-        </div>
-    <?php endif; ?>
+    <div class="button">
+        <span class="material-icons" id="prev">
+            chevron_left
+        </span>
+    </div>
+    
 
     <!-- TODO: Show Image(s) Here -->
-    <?php foreach ($images as $image) : ?>
-        <img src="uploads/<?= $image['image_path'] ?>" alt="" class="space-image">
-    <?php endforeach; ?>
+    <img src="uploads/<?= $image['image_path'] ?>" alt="" class="space-image">
+    
 
     <!-- TODO: Show Arrow Button when image more than one -->
-    <?php if ($images->num_rows > 1) : ?>
-        <div class="button">
-            <span class="material-icons" id="next">
-                chevron_right
-            </span>
-        </div>
-    <?php endif; ?>
+    <div class="button">
+        <span class="material-icons" id="next">
+            chevron_right
+        </span>
+    </div>
 
 </div>
 
 <div class="container detail-owner-container">
     <!-- TODO: Show place type and who hosted the space -->
-    <h3><?= $data['place_type']; ?> hosted by <?= $data['username']; ?></h3>
+    <h3>PLACE TYPE hosted by HOST</h3>
     <!-- TODO: Show how much guess - bedroom - bed - bathroom -->
-    <p><?= $data['guess_count']; ?> guest · <?= $data['bedroom_count']; ?> bedroom · <?= $data['bed_count']; ?> bed · <?= $data['bathroom_count']; ?> private bath</p>
+    <p>37 guest · 37 bedroom · 37 bed · 37 private bath</p>
     <hr>
 </div>
 
 <div class="container detail-offer-container">
     <h4>About this space</h4>
-    <!-- TODO: Show About this place -->
-    <?php if (!isset($data['about'])) : ?>
+    <!-- TODO: Show About this place, if it's empty show '-' -->
         <p>-</p>
-    <?php else : ?>
-        <p><?= $data['about']; ?></p>
-    <?php endif; ?>
     <hr>
 </div>
 
@@ -95,15 +69,13 @@ list($data, $images, $amenities) = getById($id);
             <span class="material-icons">
                 dark_mode
             </span>
-            <!-- TODO: Show bedroom count -->
-            <p>Bedroom(s) <b><?= $data['bedroom_count'] ?></b></p>
+            <p>Bedroom(s) <b><!-- TODO: Show number of bedroom --></b></p>
         </div>
         <div class="item">
             <span class="material-icons">
                 single_bed
             </span>
-            <!-- TODO: Show bed count -->
-            <p>Bed(s) <b><?= $data['bed_count'] ?></b></p>
+            <p>Bed(s) <b><!-- TODO: Show number of bed --></b></p>
         </div>
     </div>
     <hr>
@@ -117,22 +89,20 @@ list($data, $images, $amenities) = getById($id);
             <span class="material-icons">
                 bathroom
             </span>
-            <!-- TODO: Show bathroom count -->
-            <p>Bedroom(s) <b><?= $data['bathroom_count'] ?></b></p>
+            <p>Bedroom(s) <b><!-- TODO: Show number of bathroom --></b></p>
         </div>
         <div class="item">
             <span class="material-icons">
                 shower
             </span>
-            <!-- TODO: show shower count -->
-            <p>Shower(s) <b><?= $data['shower_count'] ?></b></p>
+            <p>Shower(s) <b><!-- TODO: show number of shower --></b></p>
         </div>
         <div class="item">
             <span class="material-icons">
                 bathtub
             </span>
-            <!-- TODO: show bathub count -->
-            <p>Bathub(s) <b><?= $data['bathub_count'] ?></b></p>
+            
+            <p>Bathub(s) <b><!-- TODO: show number of bathub --></b></p>
         </div>
     </div>
     <hr>
@@ -142,8 +112,7 @@ list($data, $images, $amenities) = getById($id);
     <h4>Amenities(s)</h4>
     <div class="icon-con">
 
-        <!-- TODO: Show amenities -->
-        <?php if ($amenities['kitchen'] == 1) : ?>
+        <!-- TODO: Show amenities available -->
             <div class="amenities-item">
                 <div>
                     <span class="material-icons">
@@ -152,9 +121,7 @@ list($data, $images, $amenities) = getById($id);
                     <p>Kitchen</p>
                 </div>
             </div>
-        <?php endif; ?>
 
-        <?php if ($amenities['free_parking'] == 1) : ?>
             <div class="amenities-item">
                 <div>
                     <span class="material-icons">
@@ -163,9 +130,7 @@ list($data, $images, $amenities) = getById($id);
                     <p>Free Parking</p>
                 </div>
             </div>
-        <?php endif; ?>
 
-        <?php if ($amenities['pets_allowed'] == 1) : ?>
             <div class="amenities-item">
                 <div>
                     <span class="material-icons">
@@ -174,10 +139,8 @@ list($data, $images, $amenities) = getById($id);
                     <p>Pets Allowed</p>
                 </div>
             </div>
-        <?php endif; ?>
 
 
-        <?php if ($amenities['wifi'] == 1) : ?>
             <div class="amenities-item">
                 <div>
                     <span class="material-icons">
@@ -186,10 +149,8 @@ list($data, $images, $amenities) = getById($id);
                     <p>Wifi</p>
                 </div>
             </div>
-        <?php endif; ?>
 
 
-        <?php if ($amenities['backyard'] == 1) : ?>
             <div class="amenities-item">
                 <div>
                     <span class="material-icons">
@@ -198,10 +159,9 @@ list($data, $images, $amenities) = getById($id);
                     <p>Backyard</p>
                 </div>
             </div>
-        <?php endif; ?>
 
 
-        <?php if ($amenities['security_camera'] == 1) : ?>
+
             <div class="amenities-item">
                 <div>
                     <span class="material-icons">
@@ -210,10 +170,8 @@ list($data, $images, $amenities) = getById($id);
                     <p>Security Camera</p>
                 </div>
             </div>
-        <?php endif; ?>
 
 
-        <?php if ($amenities['hot_tub'] == 1) : ?>
             <div class="amenities-item">
                 <div>
                     <span class="material-icons">
@@ -222,10 +180,8 @@ list($data, $images, $amenities) = getById($id);
                     <p>Hot Tub</p>
                 </div>
             </div>
-        <?php endif; ?>
 
 
-        <?php if ($amenities['smoke_alarm'] == 1) : ?>
             <div class="amenities-item">
                 <div>
                     <span class="material-icons">
@@ -234,10 +190,8 @@ list($data, $images, $amenities) = getById($id);
                     <p>Smoke Alarm</p>
                 </div>
             </div>
-        <?php endif; ?>
 
 
-        <?php if ($amenities['dedicated_workspace'] == 1) : ?>
             <div class="amenities-item">
                 <div>
                     <span class="material-icons">
@@ -246,49 +200,21 @@ list($data, $images, $amenities) = getById($id);
                     <p>Dedicated Workspace</p>
                 </div>
             </div>
-        <?php endif; ?>
 
     </div>
     <hr>
 </div>
 
 <?php include "layouts/footer.php"; ?>
-
-<?php if ($images->num_rows > 1) : ?>
+<!-- TODO: When the image is more than one, show this script -->
     <script>
         const imageElement = document.getElementsByClassName('space-image');
         const prevElement = document.getElementById('prev');
         const nextElement = document.getElementById('next');
 
-        let imgElements = Array.from(imageElement);
-        imgElements.forEach(element => {
-            element.style.display = "none";
-        });
-
-        let curr_img = 0;
-        let total_img = imgElements.length - 1;
-        imgElements[curr_img].style.display = "block";
-
         // TODO: Slide to the previous image
-        prevElement.addEventListener('click', () => {
-            imgElements[curr_img].style.display = "none";
-            curr_img--;
-            if (curr_img < 0) {
-                curr_img = total_img;
-            }
-            console.log(curr_img);
-            imgElements[curr_img].style.display = "block";
-        })
+        
 
         // TODO: Slide to the next image
-        nextElement.addEventListener('click', () => {
-            imgElements[curr_img].style.display = "none";
-            curr_img++;
-            if (curr_img > total_img) {
-                curr_img = 0;
-            }
-            console.log(curr_img);
-            imgElements[curr_img].style.display = "block";
-        })
+        
     </script>
-<?php endif; ?>

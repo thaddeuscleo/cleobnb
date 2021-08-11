@@ -35,15 +35,10 @@ if (session_status() === PHP_SESSION_NONE) {
                 </button>
             </div>
             <div class="nav__user-buttons">
-                <?php if (!isset($_SESSION['log_in']) && !isset($_SESSION['role'])) : ?>
-                    <button class="nav__user-buttons__become-host" onclick="onHostYourHomeClick()">
-                        Become a host
-                    </button>
-                <?php elseif($_SESSION['role'] != 1) : ?>
-                    <button class="nav__user-buttons__become-host" onclick="onHostYourHomeClick()">
-                        Become a host
-                    </button>
-                <?php endif; ?>
+                <!-- TODO: Show become host when logged in as normal user or guess -->
+                <button class="nav__user-buttons__become-host" onclick="onHostYourHomeClick()">
+                    Become a host
+                </button>
                 <button class="nav__user-buttons__language">
                     <span class="material-icons">language</span>
                 </button>
@@ -58,21 +53,19 @@ if (session_status() === PHP_SESSION_NONE) {
             </div>
         </div>
         <div class="user-modal" id="user-modal">
-            <?php if (isset($_SESSION['log_in']) && $_SESSION['log_in']) : ?>
-                <h5 onclick="onProfileClick()"><?= $_SESSION['username']; ?></h5>
-                <?php if ($_SESSION['role'] == 1) : ?>
-                    <h5 onclick="onManageStayClick()">Manage Stays</h5>
-                <?php else : ?>
-                    <h5 onclick="onMyBooking()">My Bookings</h5>
-                <?php endif; ?>
-                <h5 onclick="onLogOutClick()">Log Out</h5>
-            <?php else : ?>
-                <h5 onclick="onLoginClick()">Login</h5>
-                <h5 onclick="onSignUpClick()">Sign up</h5>
-                <hr>
-                <h5 onclick="onHostYourHomeClick()">Host Your Home</h5>
-                <h5>Help</h5>
-            <?php endif; ?>
+            <!-- TODO: If logged is as guess show Login, Sign Up and Host your home  -->
+            <!-- TODO: If logged is as normal user show Username, My Bookings and Log Out  -->
+            <!-- TODO: If logged is as host show Username, Manage Stays and Log Out  -->
+            <h5 onclick="onProfileClick()">USERNAME</h5>
+            <h5 onclick="onManageStayClick()">Manage Stays</h5>
+            <h5 onclick="onMyBooking()">My Bookings</h5>
+            <hr>
+            <h5 onclick="onLogOutClick()">Log Out</h5>
+            <h5 onclick="onLoginClick()">Login</h5>
+            <h5 onclick="onSignUpClick()">Sign up</h5>
+            <hr>
+            <h5 onclick="onHostYourHomeClick()">Host Your Home</h5>
+            <h5>Help</h5>
         </div>
     </nav>
 
@@ -170,32 +163,12 @@ if (session_status() === PHP_SESSION_NONE) {
             suggestionCon.style.display = "block";
         });
 
-        const Suggestion_URL = `http://localhost:8080/controllers/search/suggestion.php`;
         locationInput.addEventListener('keyup', ()=> {
-            if(locationInput.value.length >= 1){
-                const URL = `${Suggestion_URL}?query=${locationInput.value}`
-                fetch(URL)
-                    .then(data => data.json())
-                    .then(locations => {
-                        suggestionCon.innerHTML = '';
-                        locations.forEach(element => {
-                            suggestionCon.innerHTML += `
-                                <div class="item">
-                                    ${element}
-                                </div>
-                            `
-                        });
-                        const items = document.querySelectorAll(".item");
-                        items.forEach(element => {
-                            element.addEventListener('click', () => {
-                                locationInput.value = element.innerText;
-                                suggestionCon.style.display = "none";
-                            })
-                        });
-                    });
-            }else {
-                suggestionCon.innerHTML = '';   
-            }
+            // TODO: Add sugguestion auto completion for the location here
+            // Data can be retrived from './controllers/space/suggestion/php'
+            // <div class="item">
+            //      LOCATION
+            // </div>
         });
     </script>
 
