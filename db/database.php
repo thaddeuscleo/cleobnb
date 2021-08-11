@@ -2,8 +2,8 @@
 
 // TODO: Create database connection here
 $servername = "localhost";
-$username = "root";
+$username = "";
 $password = "";
-$db = "cleo";
+$db = "";
 
 $conn = new mysqli($servername, $username, $password, $db);

@@ -13,7 +13,7 @@ function localizeCurrency($cash)
 <?php include "layouts/navigation.php"; ?>
 
 <div class="book-page">
-    <form action="controllers/space/book_space.php" class="form" method="POST">
+    <form action="" class="form" method="POST">
         <!-- TODO: Show the space and the owner name -->
         <h1>Book Hanran Stay Hosted By NITH</h1>
         <div class="form__price">

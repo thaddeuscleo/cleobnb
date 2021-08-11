@@ -6,7 +6,7 @@
 <?php include "layouts/navigation.php"; ?>
 
 <div class="delete-page">
-    <form action="controllers/space/delete_space_controller.php" class="form" method="POST">
+    <form action="" class="form" method="POST">
         <h1>Delete Space</h1>
         <p>Are you sure wanna delete this space ?</p>
         <div class="buttons">

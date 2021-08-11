@@ -14,7 +14,7 @@
         <h1>Update Space</h1>
     </div>
 
-    <form action="controllers/space/update_space_controller.php" method="POST" enctype="multipart/form-data">
+    <form action="" method="POST">
 
         <div class="form-group">
             <h2>What's Your Space Name</h2>
