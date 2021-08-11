@@ -16,7 +16,7 @@ $count = 0;
 
 <div class="container_manage_rooms">
     <div class="header">
-        <h1>My Rooms.</h1>
+        <h1>My Rooms</h1>
         <a href="add_space.php">Add Rooms</a>
     </div>
     <div class="all-rooms">

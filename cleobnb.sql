@@ -73,7 +73,7 @@ CREATE TABLE `spaces` (
   `about` varchar(300) DEFAULT NULL,
   `bedroom_count` int(11) NOT NULL,
   `bed_count` int(11) NOT NULL,
-  `bathroom_count` int(11) DEFAULT NULL,
+  `bathroom_count` int(11) NOT NULL,
   `shower_count` int(11) NOT NULL,
   `bathub_count` int(11) NOT NULL,
   `place_type` varchar(100) NOT NULL,
@@ -134,4 +134,4 @@ CREATE TABLE `users` (
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-08-09 15:41:08
+-- Dump completed on 2021-08-11  8:58:37

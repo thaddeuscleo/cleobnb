@@ -10,7 +10,7 @@ $count = 0;
 
 <div class="container search-result-header">
     <p class="mt-3"><?= $results->num_rows ?> stays | <?= $startDate ?> - <?= $endDate ?> | <?= $guess; ?> Guest</p>
-    <h1>Stays in <?=$_COOKIE['location']?></h1>
+    <h1>Stays in <?=$_GET['location']?></h1>
     <hr>
 </div>
 

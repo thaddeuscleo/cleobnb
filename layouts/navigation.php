@@ -34,9 +34,15 @@ if (session_status() === PHP_SESSION_NONE) {
                 </button>
             </div>
             <div class="nav__user-buttons">
-                <button class="nav__user-buttons__become-host" onclick="onHostYourHomeClick()">
-                    Become a host
-                </button>
+                <?php if (!isset($_SESSION['log_in']) && !isset($_SESSION['role'])) : ?>
+                    <button class="nav__user-buttons__become-host" onclick="onHostYourHomeClick()">
+                        Become a host
+                    </button>
+                <?php elseif($_SESSION['role'] != 1) : ?>
+                    <button class="nav__user-buttons__become-host" onclick="onHostYourHomeClick()">
+                        Become a host
+                    </button>
+                <?php endif; ?>
                 <button class="nav__user-buttons__language">
                     <span class="material-icons">language</span>
                 </button>

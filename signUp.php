@@ -4,7 +4,7 @@
     <div class="signup-container__form-container">
         <div class="signup-container__form-container__form">
             <form action="controllers/auth/auth_controller.php" method="POST">
-                <h2>Sign Up.</h2>
+                <h2>Sign Up</h2>
                 <div class="form-control">
                     <label for="username">Username</label>
                     <input type="text" name="username" id="username" placeholder="john15">

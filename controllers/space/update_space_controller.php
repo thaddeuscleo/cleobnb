@@ -84,7 +84,7 @@ function getUploadFile()
             }
         } else {
             echo "file type error";
-            $_SESSION['upload_err'] = "File Not Allowed";
+            $_SESSION['upload_err'] = "File Must be .jpg/.png/.jpeg";
             return null;
         }
     }
@@ -195,80 +195,88 @@ function validateField(
     $selectQuery = "SELECT id FROM cleobnb.spaces WHERE name = '$spaceName'";
     $res = $conn->query($selectQuery);
 
-    if (strlen($spaceName) < 10 || $res['num_rows'] > 0) {
+    if (strlen($spaceName) < 10 || isset($res['id'])) {
+        echo "Space Name "."not valid!"."<br>";
         $_SESSION["spaceName_err"] = "Space Name Must Be At Least 10 Character Long";
         return false;
     }
 
-    if (checkdate($startDateExp[0], $startDateExp[1], $startDateExp[2])) {
-        $_SESSION["startDate_err"] = "Start Date Invalid";
+    if(empty($startDate)){
+        echo "Sstart Date "."not valid!"."<br>";
+        $_SESSION["startDate_err"] = "Start Date is Empty";
         return false;
     }
 
-    if (checkdate($endDateExp[0], $endDateExp[1], $endDateExp[2])) {
-        $_SESSION["startDate_err"] = "Start Date Invalid";
-        return false;
-    }
-
-    if (checkdate($endDateExp[0], $endDateExp[1], $endDateExp[2])) {
-        $_SESSION["startDate_err"] = "Start Date Invalid";
+    if(empty($endDate)){
+        echo "End Date "."not valid!"."<br>";
+        $_SESSION["endDate_err"] = "End Date is Empty";
         return false;
     }
 
     if ($end < $start) {
-        $_SESSION["dateRange_err"] = "Date Range Error";
+        echo "Date range "."not valid!"."<br>";
+        $_SESSION["dateRange_err"] = "Date Range is invalid";
         return false;
     }
 
-    if (strlen($location) < 1) {
+    if (empty($location)) {
+        echo "Location "."not valid!"."<br>";
         $_SESSION['location_err'] = "Location Can't Be Empty";
         return false;
     }
 
     if ($price < 100000) {
+        echo "Price "."not valid!"."<br>";
         $_SESSION['price_err'] = "price Minumun is 100000";
         return false;
     }
 
     if ($guessCount < 1) {
-        $_SESSION['guess_err'] = "Guess Can't Be Empty";
+        echo "Guess "."not valid!"."<br>";
+        $_SESSION['guess_err'] = "Guess Can't be less than 1";
         return false;
     }
 
     if ($bedroomCount < 1) {
-        $_SESSION['bedroom_err'] = "Bedroom can't be empty";
+        echo "Bedroom "."not valid!"."<br>";
+        $_SESSION['bedroom_err'] = "Bedroom can't be less than 1";
         return false;
     }
 
     if ($bedCount < 1) {
-        $_SESSION['bed_err'] = "Bed can't be empty";
+        echo "Bed "."not valid!"."<br>";
+        $_SESSION['bed_err'] = "Bed can't be less than 1";
         return false;
     }
 
     if ($bathroomCount < 1) {
-        $_SESSION['bathroom_err'] = "Bathroom can't be empty";
+        echo "Bathroom "."not valid!"."<br>";
+        $_SESSION['bathroom_err'] = "Bathroom can't be less than 1";
         return false;
     }
 
     if ($showerCount < 1) {
-        $_SESSION['shower_err'] = "Shower can't be empty";
+        echo "Shower "."not valid!"."<br>";
+        $_SESSION['shower_err'] = "Shower can't be less than 1";
         return false;
     }
 
     if ($bathubCount < 1) {
-        $_SESSION['bathub_err'] = "Bathub can't be empty";
+        echo "Bathub "."not valid!"."<br>";
+        $_SESSION['bathub_err'] = "Bathub can't be less than 1";
         return false;
     }
 
     if (strlen($placeType) < 1) {
-        $_SESSION['placeType_err'] = "Place Type Can't be empty";
+        echo "Place "."not valid!"."<br>";
+        $_SESSION['placeType_err'] = "Place Type Can't be less than 1";
         return false;
     }
 
-    if ($fileCount < 1) {
-        $_SESSION['image_err'] = "Please Insert At least one image";
-        return false;
-    }
+    // if ($fileCount < 1) {
+    //     $_SESSION['image_err'] = "Please Insert At least one image";
+    //     return false;
+    // }
     return true;
 }
 
@@ -308,6 +316,17 @@ if (isset($_POST['update_space'])) {
 
     $filenames = getUploadFile();
     $fileCount = count($_FILES['images']['name']);
+
+    if($filenames == NULL){
+        echo "heii";
+        header('Location: ' . $_SERVER['HTTP_REFERER']);
+        return;
+    }
+    if(!$isValid){
+        echo "heii";
+        header('Location: ' . $_SERVER['HTTP_REFERER']);
+        return;
+    }
 
     if (count($filenames) == $fileCount) {
         echo "insert";

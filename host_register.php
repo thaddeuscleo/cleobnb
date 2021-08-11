@@ -4,7 +4,7 @@
     <div class="signup-container__form-container">
         <div class="signup-container__form-container__form">
             <form action="controllers/auth/auth_controller.php" class="" method="POST">
-                <h2 style="font-size: 60pt;">Become A Host.</h2>
+                <h2 style="font-size: 60pt;">Become A Host</h2>
                 <div class="form-control">
                     <label for="username">Username</label>
                     <input type="text" name="username" id="username" placeholder="john15">

@@ -24,6 +24,13 @@ function validation($location, $startDate, $endDate, $guessNumber) {
 }
 
 function setSearchCookie($location, $startDate, $endDate, $guessNumber, $diff, $rStartDate, $rEndDate) {
+    unset($_COOKIE['location']);
+    unset($_COOKIE['startDate']);
+    unset($_COOKIE['endDate']);
+    unset($_COOKIE['guessCount']);
+    unset($_COOKIE['diff']);
+    unset($_COOKIE['rawStartDate']);
+    unset($_COOKIE['rawEndDate']);
     setcookie('location', $location);
     setcookie('startDate', $startDate);
     setcookie('endDate', $endDate);
