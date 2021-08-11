@@ -1,8 +1,7 @@
- ## Cleobnb Backend Developer
+ # Cleobnb Backend Developer
 
  This project include some tools that you can use to help your development process.
 
- # The CLI Helper
  ## I. Local Server
 You can activate local server by running this command in the project root:
 ```
