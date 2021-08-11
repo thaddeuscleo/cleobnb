@@ -193,7 +193,8 @@ function validateField(
     $end = new DateTime($endDate);
 
     $selectQuery = "SELECT id FROM cleobnb.spaces WHERE name = '$spaceName'";
-    $res = $conn->query($selectQuery);
+    $res = $conn->query($selectQuery)->fetch_assoc();
+
 
     if (strlen($spaceName) < 10 || isset($res['id'])) {
         echo "Space Name "."not valid!"."<br>";

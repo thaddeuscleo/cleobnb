@@ -96,14 +96,16 @@ if(isset($argv[1])){
     if (strpos($argv[1], 'migrate') !== false) {
         $exp = explode(':',$argv[1]);
         if(isset($exp[1])){
-            getCreds();
             if($exp[1] == 'full'){
+                getCreds();
                 createDatabase();
                 insertTables();
             }else if($exp[1] == 'fresh'){
+                getCreds();
                 dropAllTables();
                 insertTables();
             }else if($exp[1] == 'drop'){
+                getCreds();
                 dropDatabase();
             }else {
                 echo "Usage: bnb migrate:<operation>    Example: bnb migrate:full \n";
