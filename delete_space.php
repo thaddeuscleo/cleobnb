@@ -11,9 +11,9 @@
         <p>Are you sure wanna delete this space ?</p>
         <div class="buttons">
             <a href="manage_my_space.php">Back</a>
-            <button name="delete_space">Delete</button>
+            <button>Delete</button>
         </div>
-        <input type="text" name="id" value="1" hidden>
+        <input type="text" value="1" hidden>
     </form>
 </div>
 

@@ -18,25 +18,25 @@
 
         <div class="form-group">
             <h2>What's Your Space Name</h2>
-            <input type="text" placeholder="Space Name" name="space-name" value="">
+            <input type="text" placeholder="Space Name" value="">
             <h4>Availablelity Date</h4>
             <div class="date-start-end">
                 <h5>Start</h5>
-                <input type="date" name="start-date" id="" value="">
+                <input type="date" id="" value="">
                 <h5>End</h5>
-                <input type="date" name="end-date" id="" value="">
+                <input type="date" id="" value="">
             </div>
             <h4>Location</h4>
             <div class="date-start-end">
-                <input type="text" name="location" id="" placeholder="location" value="">
+                <input type="text" id="" placeholder="location" value="">
             </div>
             <h4>Price</h4>
             <div class="date-start-end">
-                <input type="number" name="price" id="" placeholder="price" value="">
+                <input type="number" id="" placeholder="price" value="">
             </div>
             <h4>About</h4>
             <div class="date-start-end">
-                <textarea name="about" id="" cols="30" rows="10"></textarea>
+                <textarea id="" cols="30" rows="10"></textarea>
             </div>
         </div>
 
@@ -45,30 +45,30 @@
 
             <h4>Guess Capacity</h4>
             <div class="date-start-end">
-                <input type="number" name="guess-count" id="" value="">
+                <input type="number" id="" value="">
             </div>
 
             <h4>Bed Room</h4>
             <div class="date-start-end">
                 <h5>Number Of Bedroom</h5>
-                <input type="number" name="bedroom-count" id="" value="">
+                <input type="number" id="" value="">
                 <h5>Number Of Beds</h5>
-                <input type="number" name="bed-count" id="" value="">
+                <input type="number" id="" value="">
             </div>
 
             <h4>Bath Room</h4>
             <div class="date-start-end">
                 <h5>Number Of Bath Room</h5>
-                <input type="number" name="bathroom-count" id="" value="">
+                <input type="number" id="" value="">
                 <h5>Bathroom with shower</h5>
-                <input type="number" name="shower-count" id="" value="">
+                <input type="number" id="" value="">
                 <h5>Bathroom bathtub</h5>
-                <input type="number" name="bathub-count" id="" value="">
+                <input type="number" id="" value="">
             </div>
 
             <h4>Place Type</h4>
             <div class="date-start-end">
-                <select name="place-type" id="">
+                <select id="">
                     <option value="private_room">Private Room</option>
                     <option value="hotel_room">Hotel Room</option>
                     <option value="entire_place">Entire Place</option>
@@ -83,7 +83,7 @@
                 <h4>Amenities</h4>
                 <div class="amenities-container">
                     <div class="amenities-container__item">
-                        <input type="checkbox" name="kitchen" id="">
+                        <input type="checkbox" id="">
                         <div>
                             <span class="material-icons">
                                 restaurant
@@ -92,7 +92,7 @@
                         </div>
                     </div>
                     <div class="amenities-container__item">
-                        <input type="checkbox" name="free-parking" id="">
+                        <input type="checkbox" id="">
                         <div>
                             <span class="material-icons">
                                 directions_car
@@ -101,7 +101,7 @@
                         </div>
                     </div>
                     <div class="amenities-container__item">
-                        <input type="checkbox" name="pets-allowed" id="">
+                        <input type="checkbox" id="">
                         <div>
                             <span class="material-icons">
                                 pets
@@ -110,7 +110,7 @@
                         </div>
                     </div>
                     <div class="amenities-container__item">
-                        <input type="checkbox" name="wifi" id="">
+                        <input type="checkbox" id="">
                         <div>
                             <span class="material-icons">
                                 wifi
@@ -119,7 +119,7 @@
                         </div>
                     </div>
                     <div class="amenities-container__item">
-                        <input type="checkbox" name="backyard" id="">
+                        <input type="checkbox" id="">
                         <div>
                             <span class="material-icons">
                                 local_florist
@@ -128,7 +128,7 @@
                         </div>
                     </div>
                     <div class="amenities-container__item">
-                        <input type="checkbox" name="security-camera" id="">
+                        <input type="checkbox" id="">
                         <div>
                             <span class="material-icons">
                                 videocam
@@ -137,7 +137,7 @@
                         </div>
                     </div>
                     <div class="amenities-container__item">
-                        <input type="checkbox" name="hot-tub" id="">
+                        <input type="checkbox" id="">
                         <div>
                             <span class="material-icons">
                                 hot_tub
@@ -146,7 +146,7 @@
                         </div>
                     </div>
                     <div class="amenities-container__item">
-                        <input type="checkbox" name="smoke-alarm" id="">
+                        <input type="checkbox" id="">
                         <div>
                             <span class="material-icons">
                                 lens
@@ -155,7 +155,7 @@
                         </div>
                     </div>
                     <div class="amenities-container__item">
-                        <input type="checkbox" name="dedicated-workspace" id="">
+                        <input type="checkbox" id="">
                         <div>
                             <span class="material-icons">
                                 cases
@@ -171,13 +171,13 @@
             <h2>Show How Your Space Look Like</h2>
             <div class="date-start-end">
                 <h5>Upload Image Here</h5>
-                <input type="file" name="images[]" id="" multiple>
+                <input type="file" id="" multiple>
             </div>
         </div>
 
-        <input type="number" value="1" name="id" hidden>
+        <input type="number" value="1" hidden>
 
-        <button name="update_space">Confirm Update This Space</button>
+        <button>Confirm Update This Space</button>
     </form>
 </div>
 
