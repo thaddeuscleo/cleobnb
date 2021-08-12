@@ -1,3 +1,9 @@
+<?php
+
+// TODO: Validate and Sign up the user here
+
+?>
+
 <?php include "layouts/navigation.php"; ?>
 
 <div class="signup-container">

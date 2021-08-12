@@ -1,6 +1,8 @@
 <?php
 
 // TODO: Make sure only host can access this page
+// TODO: Delete the space here
+
 ?>
 
 <?php include "layouts/navigation.php"; ?>

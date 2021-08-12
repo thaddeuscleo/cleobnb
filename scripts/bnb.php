@@ -35,7 +35,7 @@ function insertTables(){
     if($conn->connect_error){
         die("Connection failed: ".$conn->connect_error);
     }
-    $create_query = file_get_contents("cleobnb.sql");
+    $create_query = file_get_contents("./scripts/cleobnb.sql");
     $res = $conn->multi_query($create_query);
     if($res){
         echo "[INFO] Tables created successfully\n";

@@ -1,3 +1,8 @@
+<?php
+// TODO: Validate and register the host here
+
+?>
+
 <?php include "layouts/navigation.php"; ?>
 
 <div class="signup-container">

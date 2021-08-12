@@ -1,7 +1,8 @@
 <?php
 
 // TODO: Fetch all required data according to the selected space bu the user
-// TODO: Calculate the price with the formula that has been provided  
+// TODO: Calculate the price with the formula that has been provided 
+// TODO: Insert the booking here.
 
 function localizeCurrency($cash)
 {

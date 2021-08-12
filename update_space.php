@@ -1,9 +1,10 @@
 <?php
 
-// TODO: Get all required data here\
+// TODO: Get all required data here
 // TODO: Fill the all form with recorded data in the database
 // You can ignore image not filled when the page is loaded
 
+// TODO: Update Form Here 
 ?>
 
 <?php include "layouts/navigation.php"; ?>

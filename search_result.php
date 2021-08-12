@@ -1,5 +1,5 @@
 <?php
-// TODO: Fetch all the the required data
+// TODO: Fetch all the the required data here
 ?>
 
 <?php include "layouts/navigation.php"; ?>
