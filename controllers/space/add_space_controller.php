@@ -231,7 +231,7 @@ function validateField(
 
     if (strlen($spaceName) < 10 || isset($res['id'])) {
         echo "Space Name "."not valid!"."<br>";
-        $_SESSION["spaceName_err"] = "Space Name Must Be At Least 10 Character Long";
+        $_SESSION["spaceName_err"] = "Space Name Must Be At Least 10 Character Long and unique";
         return false;
     }
 

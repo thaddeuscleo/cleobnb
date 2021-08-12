@@ -16,8 +16,8 @@ $count = 0;
 
 <div class="container_manage_rooms">
     <div class="header">
-        <h1>My Rooms</h1>
-        <a href="add_space.php">Add Rooms</a>
+        <h1>My Spaces</h1>
+        <a href="add_space.php">Add Space</a>
     </div>
     <div class="all-rooms">
         <!-- TODO: Show available space according to the search  -->

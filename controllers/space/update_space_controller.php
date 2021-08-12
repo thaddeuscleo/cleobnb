@@ -185,18 +185,18 @@ function validateField(
     $guessCount,
     $price
 ) {
-    global $conn;
+    // global $conn;
     $fileCount = count($_FILES['images']['name']);
     $startDateExp = explode('/', $startDate);
     $endDateExp = explode('/', $endDate);
     $start = new DateTime($startDate);
     $end = new DateTime($endDate);
 
-    $selectQuery = "SELECT id FROM cleobnb.spaces WHERE name = '$spaceName'";
-    $res = $conn->query($selectQuery)->fetch_assoc();
+    // $selectQuery = "SELECT id FROM cleobnb.spaces WHERE name = '$spaceName'";
+    // $res = $conn->query($selectQuery)->fetch_assoc();
 
 
-    if (strlen($spaceName) < 10 || isset($res['id'])) {
+    if (strlen($spaceName) < 10) {
         echo "Space Name "."not valid!"."<br>";
         $_SESSION["spaceName_err"] = "Space Name Must Be At Least 10 Character Long";
         return false;
